@@ -3054,3 +3054,161 @@ This generated password is for development use only. Your security configuration
 25-10-2023 15:31:34.843 [RMI TCP Connection(2)-192.168.0.129] INFO  o.a.c.c.C.[Tomcat].[localhost].[/].log - Initializing Spring DispatcherServlet 'dispatcherServlet'
 25-10-2023 15:31:34.844 [RMI TCP Connection(2)-192.168.0.129] INFO  o.s.web.servlet.DispatcherServlet.initServletBean - Initializing Servlet 'dispatcherServlet'
 25-10-2023 15:31:34.847 [RMI TCP Connection(2)-192.168.0.129] INFO  o.s.web.servlet.DispatcherServlet.initServletBean - Completed initialization in 3 ms
+25-10-2023 15:40:46.173 [SpringApplicationShutdownHook] INFO  o.s.o.j.LocalContainerEntityManagerFactoryBean.destroy - Closing JPA EntityManagerFactory for persistence unit 'default'
+25-10-2023 15:40:46.176 [SpringApplicationShutdownHook] INFO  com.zaxxer.hikari.HikariDataSource.close - HikariPool-1 - Shutdown initiated...
+25-10-2023 15:40:46.182 [SpringApplicationShutdownHook] INFO  com.zaxxer.hikari.HikariDataSource.close - HikariPool-1 - Shutdown completed.
+25-10-2023 15:45:43.358 [main] INFO  c.e.t.TravelProjectApplication.logStarting - Starting TravelProjectApplication using Java 17.0.7 with PID 3560 (C:\Users\Алексей\IdeaProjects\Travel-Project\target\classes started by Алексей in C:\Users\Алексей\IdeaProjects\Travel-Project)
+25-10-2023 15:45:43.362 [main] INFO  c.e.t.TravelProjectApplication.logStartupProfileInfo - No active profile set, falling back to 1 default profile: "default"
+25-10-2023 15:45:44.411 [main] INFO  o.s.d.r.c.RepositoryConfigurationDelegate.registerRepositoriesIn - Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+25-10-2023 15:45:44.483 [main] INFO  o.s.d.r.c.RepositoryConfigurationDelegate.registerRepositoriesIn - Finished Spring Data repository scanning in 63 ms. Found 5 JPA repository interfaces.
+25-10-2023 15:45:45.068 [main] INFO  o.s.b.w.e.tomcat.TomcatWebServer.initialize - Tomcat initialized with port(s): 8080 (http)
+25-10-2023 15:45:45.077 [main] INFO  o.a.catalina.core.StandardService.log - Starting service [Tomcat]
+25-10-2023 15:45:45.077 [main] INFO  o.a.catalina.core.StandardEngine.log - Starting Servlet engine: [Apache Tomcat/10.1.15]
+25-10-2023 15:45:45.289 [main] INFO  o.apache.jasper.servlet.TldScanner.log - At least one JAR was scanned for TLDs yet contained no TLDs. Enable debug logging for this logger for a complete list of JARs that were scanned but no TLDs were found in them. Skipping unneeded JARs during scanning can improve startup time and JSP compilation time.
+25-10-2023 15:45:45.294 [main] INFO  o.a.c.c.C.[Tomcat].[localhost].[/].log - Initializing Spring embedded WebApplicationContext
+25-10-2023 15:45:45.294 [main] INFO  o.s.b.w.s.c.ServletWebServerApplicationContext.prepareWebApplicationContext - Root WebApplicationContext: initialization completed in 1862 ms
+25-10-2023 15:45:45.483 [main] INFO  o.h.jpa.internal.util.LogHelper.logPersistenceUnitInformation - HHH000204: Processing PersistenceUnitInfo [name: default]
+25-10-2023 15:45:45.547 [main] INFO  org.hibernate.Version.logVersion - HHH000412: Hibernate ORM core version 6.2.13.Final
+25-10-2023 15:45:45.550 [main] INFO  org.hibernate.cfg.Environment.<clinit> - HHH000406: Using bytecode reflection optimizer
+25-10-2023 15:45:45.827 [main] INFO  o.s.o.j.p.SpringPersistenceUnitInfo.addTransformer - No LoadTimeWeaver setup: ignoring JPA class transformer
+25-10-2023 15:45:45.854 [main] INFO  com.zaxxer.hikari.HikariDataSource.getConnection - HikariPool-1 - Starting...
+25-10-2023 15:45:46.004 [main] INFO  com.zaxxer.hikari.pool.HikariPool.checkFailFast - HikariPool-1 - Added connection org.postgresql.jdbc.PgConnection@2864d34d
+25-10-2023 15:45:46.006 [main] INFO  com.zaxxer.hikari.HikariDataSource.getConnection - HikariPool-1 - Start completed.
+25-10-2023 15:45:46.967 [main] INFO  o.h.e.t.j.p.i.JtaPlatformInitiator.initiateService - HHH000489: No JTA platform available (set 'hibernate.transaction.jta.platform' to enable JTA platform integration)
+25-10-2023 15:45:46.990 [main] WARN  o.h.e.jdbc.spi.SqlExceptionHelper.logWarning - SQL Warning Code: 0, SQLState: 00000
+25-10-2023 15:45:46.990 [main] WARN  o.h.e.jdbc.spi.SqlExceptionHelper.logWarning - ограничение "fkbf2a0vme5rrev0l1oqitu85th" в таблице "attractions" не существует, пропускается
+25-10-2023 15:45:47.052 [main] INFO  o.s.o.j.LocalContainerEntityManagerFactoryBean.buildNativeEntityManagerFactory - Initialized JPA EntityManagerFactory for persistence unit 'default'
+25-10-2023 15:45:47.400 [main] WARN  o.s.b.a.o.j.JpaBaseConfiguration$JpaWebConfiguration.openEntityManagerInViewInterceptor - spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+25-10-2023 15:45:47.866 [main] WARN  o.s.b.a.s.s.UserDetailsServiceAutoConfiguration.getOrDeducePassword - 
+
+Using generated security password: b61854d5-b8ba-442a-ab26-b1bdff97faff
+
+This generated password is for development use only. Your security configuration must be updated before running your application in production.
+
+25-10-2023 15:45:47.956 [main] INFO  o.s.b.a.e.web.EndpointLinksResolver.<init> - Exposing 4 endpoint(s) beneath base path '/actuator'
+25-10-2023 15:45:47.968 [main] INFO  o.s.s.web.DefaultSecurityFilterChain.<init> - Will secure any request with [org.springframework.security.web.session.DisableEncodeUrlFilter@4a5dc126, org.springframework.security.web.context.request.async.WebAsyncManagerIntegrationFilter@34fde3a3, org.springframework.security.web.context.SecurityContextHolderFilter@2801ccb3, org.springframework.security.web.header.HeaderWriterFilter@352bea0e, org.springframework.web.filter.CorsFilter@4cdb7fd9, org.springframework.security.web.csrf.CsrfFilter@686ee555, org.springframework.security.web.authentication.logout.LogoutFilter@56d189d0, org.springframework.security.web.authentication.UsernamePasswordAuthenticationFilter@4d7f3adf, org.springframework.security.web.authentication.ui.DefaultLoginPageGeneratingFilter@7b88a2e2, org.springframework.security.web.authentication.ui.DefaultLogoutPageGeneratingFilter@5d9639bb, org.springframework.security.web.authentication.www.BasicAuthenticationFilter@47b72d3b, org.springframework.security.web.savedrequest.RequestCacheAwareFilter@5896899d, org.springframework.security.web.servletapi.SecurityContextHolderAwareRequestFilter@6426ad0b, org.springframework.security.web.authentication.AnonymousAuthenticationFilter@796687de, org.springframework.security.web.access.ExceptionTranslationFilter@7e34e466, org.springframework.security.web.access.intercept.AuthorizationFilter@4c2812aa]
+25-10-2023 15:45:48.147 [main] INFO  o.s.b.w.e.tomcat.TomcatWebServer.start - Tomcat started on port(s): 8080 (http) with context path ''
+25-10-2023 15:45:48.160 [main] INFO  c.e.t.TravelProjectApplication.logStarted - Started TravelProjectApplication in 5.417 seconds (process running for 6.409)
+25-10-2023 15:45:48.815 [RMI TCP Connection(6)-192.168.0.129] INFO  o.a.c.c.C.[Tomcat].[localhost].[/].log - Initializing Spring DispatcherServlet 'dispatcherServlet'
+25-10-2023 15:45:48.815 [RMI TCP Connection(6)-192.168.0.129] INFO  o.s.web.servlet.DispatcherServlet.initServletBean - Initializing Servlet 'dispatcherServlet'
+25-10-2023 15:45:48.818 [RMI TCP Connection(6)-192.168.0.129] INFO  o.s.web.servlet.DispatcherServlet.initServletBean - Completed initialization in 3 ms
+25-10-2023 15:47:52.495 [SpringApplicationShutdownHook] INFO  o.s.o.j.LocalContainerEntityManagerFactoryBean.destroy - Closing JPA EntityManagerFactory for persistence unit 'default'
+25-10-2023 15:47:52.498 [SpringApplicationShutdownHook] INFO  com.zaxxer.hikari.HikariDataSource.close - HikariPool-1 - Shutdown initiated...
+25-10-2023 15:47:52.501 [SpringApplicationShutdownHook] INFO  com.zaxxer.hikari.HikariDataSource.close - HikariPool-1 - Shutdown completed.
+25-10-2023 15:47:57.411 [main] INFO  c.e.t.TravelProjectApplication.logStarting - Starting TravelProjectApplication using Java 17.0.7 with PID 13840 (C:\Users\Алексей\IdeaProjects\Travel-Project\target\classes started by Алексей in C:\Users\Алексей\IdeaProjects\Travel-Project)
+25-10-2023 15:47:57.415 [main] INFO  c.e.t.TravelProjectApplication.logStartupProfileInfo - No active profile set, falling back to 1 default profile: "default"
+25-10-2023 15:47:58.518 [main] INFO  o.s.d.r.c.RepositoryConfigurationDelegate.registerRepositoriesIn - Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+25-10-2023 15:47:58.601 [main] INFO  o.s.d.r.c.RepositoryConfigurationDelegate.registerRepositoriesIn - Finished Spring Data repository scanning in 73 ms. Found 5 JPA repository interfaces.
+25-10-2023 15:47:59.226 [main] INFO  o.s.b.w.e.tomcat.TomcatWebServer.initialize - Tomcat initialized with port(s): 8080 (http)
+25-10-2023 15:47:59.236 [main] INFO  o.a.catalina.core.StandardService.log - Starting service [Tomcat]
+25-10-2023 15:47:59.237 [main] INFO  o.a.catalina.core.StandardEngine.log - Starting Servlet engine: [Apache Tomcat/10.1.15]
+25-10-2023 15:47:59.482 [main] INFO  o.apache.jasper.servlet.TldScanner.log - At least one JAR was scanned for TLDs yet contained no TLDs. Enable debug logging for this logger for a complete list of JARs that were scanned but no TLDs were found in them. Skipping unneeded JARs during scanning can improve startup time and JSP compilation time.
+25-10-2023 15:47:59.487 [main] INFO  o.a.c.c.C.[Tomcat].[localhost].[/].log - Initializing Spring embedded WebApplicationContext
+25-10-2023 15:47:59.488 [main] INFO  o.s.b.w.s.c.ServletWebServerApplicationContext.prepareWebApplicationContext - Root WebApplicationContext: initialization completed in 2026 ms
+25-10-2023 15:47:59.725 [main] INFO  o.h.jpa.internal.util.LogHelper.logPersistenceUnitInformation - HHH000204: Processing PersistenceUnitInfo [name: default]
+25-10-2023 15:47:59.807 [main] INFO  org.hibernate.Version.logVersion - HHH000412: Hibernate ORM core version 6.2.13.Final
+25-10-2023 15:47:59.811 [main] INFO  org.hibernate.cfg.Environment.<clinit> - HHH000406: Using bytecode reflection optimizer
+25-10-2023 15:48:00.143 [main] INFO  o.s.o.j.p.SpringPersistenceUnitInfo.addTransformer - No LoadTimeWeaver setup: ignoring JPA class transformer
+25-10-2023 15:48:00.176 [main] INFO  com.zaxxer.hikari.HikariDataSource.getConnection - HikariPool-1 - Starting...
+25-10-2023 15:48:00.371 [main] INFO  com.zaxxer.hikari.pool.HikariPool.checkFailFast - HikariPool-1 - Added connection org.postgresql.jdbc.PgConnection@4654e373
+25-10-2023 15:48:00.373 [main] INFO  com.zaxxer.hikari.HikariDataSource.getConnection - HikariPool-1 - Start completed.
+25-10-2023 15:48:01.500 [main] INFO  o.h.e.t.j.p.i.JtaPlatformInitiator.initiateService - HHH000489: No JTA platform available (set 'hibernate.transaction.jta.platform' to enable JTA platform integration)
+25-10-2023 15:48:01.536 [main] WARN  o.h.e.jdbc.spi.SqlExceptionHelper.logWarning - SQL Warning Code: 0, SQLState: 00000
+25-10-2023 15:48:01.537 [main] WARN  o.h.e.jdbc.spi.SqlExceptionHelper.logWarning - последовательность "attractions_seq" не существует, пропускается
+25-10-2023 15:48:01.537 [main] WARN  o.h.e.jdbc.spi.SqlExceptionHelper.logWarning - SQL Warning Code: 0, SQLState: 00000
+25-10-2023 15:48:01.537 [main] WARN  o.h.e.jdbc.spi.SqlExceptionHelper.logWarning - последовательность "cities_seq" не существует, пропускается
+25-10-2023 15:48:01.538 [main] WARN  o.h.e.jdbc.spi.SqlExceptionHelper.logWarning - SQL Warning Code: 0, SQLState: 00000
+25-10-2023 15:48:01.538 [main] WARN  o.h.e.jdbc.spi.SqlExceptionHelper.logWarning - последовательность "comments_seq" не существует, пропускается
+25-10-2023 15:48:01.538 [main] WARN  o.h.e.jdbc.spi.SqlExceptionHelper.logWarning - SQL Warning Code: 0, SQLState: 00000
+25-10-2023 15:48:01.538 [main] WARN  o.h.e.jdbc.spi.SqlExceptionHelper.logWarning - последовательность "country_seq" не существует, пропускается
+25-10-2023 15:48:01.539 [main] WARN  o.h.e.jdbc.spi.SqlExceptionHelper.logWarning - SQL Warning Code: 0, SQLState: 00000
+25-10-2023 15:48:01.539 [main] WARN  o.h.e.jdbc.spi.SqlExceptionHelper.logWarning - последовательность "users_seq" не существует, пропускается
+25-10-2023 15:48:01.576 [main] INFO  o.s.o.j.LocalContainerEntityManagerFactoryBean.buildNativeEntityManagerFactory - Initialized JPA EntityManagerFactory for persistence unit 'default'
+25-10-2023 15:48:01.884 [main] WARN  o.s.b.a.o.j.JpaBaseConfiguration$JpaWebConfiguration.openEntityManagerInViewInterceptor - spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+25-10-2023 15:48:02.332 [main] WARN  o.s.b.a.s.s.UserDetailsServiceAutoConfiguration.getOrDeducePassword - 
+
+Using generated security password: 75621ed7-bc43-4b53-93fc-272867fe0305
+
+This generated password is for development use only. Your security configuration must be updated before running your application in production.
+
+25-10-2023 15:48:02.426 [main] INFO  o.s.b.a.e.web.EndpointLinksResolver.<init> - Exposing 4 endpoint(s) beneath base path '/actuator'
+25-10-2023 15:48:02.439 [main] INFO  o.s.s.web.DefaultSecurityFilterChain.<init> - Will secure any request with [org.springframework.security.web.session.DisableEncodeUrlFilter@5946e540, org.springframework.security.web.context.request.async.WebAsyncManagerIntegrationFilter@651a399, org.springframework.security.web.context.SecurityContextHolderFilter@56a63c28, org.springframework.security.web.header.HeaderWriterFilter@74832504, org.springframework.web.filter.CorsFilter@79ef8115, org.springframework.security.web.csrf.CsrfFilter@14941b06, org.springframework.security.web.authentication.logout.LogoutFilter@3fe33c59, org.springframework.security.web.authentication.UsernamePasswordAuthenticationFilter@4f9191c1, org.springframework.security.web.authentication.ui.DefaultLoginPageGeneratingFilter@22b581a5, org.springframework.security.web.authentication.ui.DefaultLogoutPageGeneratingFilter@6db99c79, org.springframework.security.web.authentication.www.BasicAuthenticationFilter@46e32574, org.springframework.security.web.savedrequest.RequestCacheAwareFilter@4ce5013a, org.springframework.security.web.servletapi.SecurityContextHolderAwareRequestFilter@701153c1, org.springframework.security.web.authentication.AnonymousAuthenticationFilter@3bb186b, org.springframework.security.web.access.ExceptionTranslationFilter@3fae1ec9, org.springframework.security.web.access.intercept.AuthorizationFilter@3dfb1626]
+25-10-2023 15:48:02.613 [main] INFO  o.s.b.w.e.tomcat.TomcatWebServer.start - Tomcat started on port(s): 8080 (http) with context path ''
+25-10-2023 15:48:02.625 [main] INFO  c.e.t.TravelProjectApplication.logStarted - Started TravelProjectApplication in 5.708 seconds (process running for 6.535)
+25-10-2023 15:48:02.947 [RMI TCP Connection(4)-192.168.0.129] INFO  o.a.c.c.C.[Tomcat].[localhost].[/].log - Initializing Spring DispatcherServlet 'dispatcherServlet'
+25-10-2023 15:48:02.948 [RMI TCP Connection(4)-192.168.0.129] INFO  o.s.web.servlet.DispatcherServlet.initServletBean - Initializing Servlet 'dispatcherServlet'
+25-10-2023 15:48:02.950 [RMI TCP Connection(4)-192.168.0.129] INFO  o.s.web.servlet.DispatcherServlet.initServletBean - Completed initialization in 2 ms
+25-10-2023 15:57:56.851 [SpringApplicationShutdownHook] INFO  o.s.o.j.LocalContainerEntityManagerFactoryBean.destroy - Closing JPA EntityManagerFactory for persistence unit 'default'
+25-10-2023 15:57:56.854 [SpringApplicationShutdownHook] INFO  com.zaxxer.hikari.HikariDataSource.close - HikariPool-1 - Shutdown initiated...
+25-10-2023 15:57:56.857 [SpringApplicationShutdownHook] INFO  com.zaxxer.hikari.HikariDataSource.close - HikariPool-1 - Shutdown completed.
+25-10-2023 16:04:19.023 [main] INFO  c.e.t.TravelProjectApplication.logStarting - Starting TravelProjectApplication using Java 17.0.7 with PID 8368 (C:\Users\Алексей\IdeaProjects\Travel-Project\target\classes started by Алексей in C:\Users\Алексей\IdeaProjects\Travel-Project)
+25-10-2023 16:04:19.027 [main] INFO  c.e.t.TravelProjectApplication.logStartupProfileInfo - No active profile set, falling back to 1 default profile: "default"
+25-10-2023 16:04:20.174 [main] INFO  o.s.d.r.c.RepositoryConfigurationDelegate.registerRepositoriesIn - Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+25-10-2023 16:04:20.252 [main] INFO  o.s.d.r.c.RepositoryConfigurationDelegate.registerRepositoriesIn - Finished Spring Data repository scanning in 68 ms. Found 5 JPA repository interfaces.
+25-10-2023 16:04:20.864 [main] INFO  o.s.b.w.e.tomcat.TomcatWebServer.initialize - Tomcat initialized with port(s): 8080 (http)
+25-10-2023 16:04:20.874 [main] INFO  o.a.catalina.core.StandardService.log - Starting service [Tomcat]
+25-10-2023 16:04:20.874 [main] INFO  o.a.catalina.core.StandardEngine.log - Starting Servlet engine: [Apache Tomcat/10.1.15]
+25-10-2023 16:04:21.116 [main] INFO  o.apache.jasper.servlet.TldScanner.log - At least one JAR was scanned for TLDs yet contained no TLDs. Enable debug logging for this logger for a complete list of JARs that were scanned but no TLDs were found in them. Skipping unneeded JARs during scanning can improve startup time and JSP compilation time.
+25-10-2023 16:04:21.121 [main] INFO  o.a.c.c.C.[Tomcat].[localhost].[/].log - Initializing Spring embedded WebApplicationContext
+25-10-2023 16:04:21.121 [main] INFO  o.s.b.w.s.c.ServletWebServerApplicationContext.prepareWebApplicationContext - Root WebApplicationContext: initialization completed in 2045 ms
+25-10-2023 16:04:21.334 [main] INFO  o.h.jpa.internal.util.LogHelper.logPersistenceUnitInformation - HHH000204: Processing PersistenceUnitInfo [name: default]
+25-10-2023 16:04:21.400 [main] INFO  org.hibernate.Version.logVersion - HHH000412: Hibernate ORM core version 6.2.13.Final
+25-10-2023 16:04:21.404 [main] INFO  org.hibernate.cfg.Environment.<clinit> - HHH000406: Using bytecode reflection optimizer
+25-10-2023 16:04:21.692 [main] INFO  o.s.o.j.p.SpringPersistenceUnitInfo.addTransformer - No LoadTimeWeaver setup: ignoring JPA class transformer
+25-10-2023 16:04:21.718 [main] INFO  com.zaxxer.hikari.HikariDataSource.getConnection - HikariPool-1 - Starting...
+25-10-2023 16:04:21.870 [main] INFO  com.zaxxer.hikari.pool.HikariPool.checkFailFast - HikariPool-1 - Added connection org.postgresql.jdbc.PgConnection@65ad2b42
+25-10-2023 16:04:21.872 [main] INFO  com.zaxxer.hikari.HikariDataSource.getConnection - HikariPool-1 - Start completed.
+25-10-2023 16:04:22.865 [main] INFO  o.h.e.t.j.p.i.JtaPlatformInitiator.initiateService - HHH000489: No JTA platform available (set 'hibernate.transaction.jta.platform' to enable JTA platform integration)
+25-10-2023 16:04:22.885 [main] WARN  o.h.e.jdbc.spi.SqlExceptionHelper.logWarning - SQL Warning Code: 0, SQLState: 00000
+25-10-2023 16:04:22.885 [main] WARN  o.h.e.jdbc.spi.SqlExceptionHelper.logWarning - ограничение "fkkq9ql9geqfxxd9ex4mwyplwtf" в таблице "attractions" не существует, пропускается
+25-10-2023 16:04:22.954 [main] INFO  o.s.o.j.LocalContainerEntityManagerFactoryBean.buildNativeEntityManagerFactory - Initialized JPA EntityManagerFactory for persistence unit 'default'
+25-10-2023 16:04:23.259 [main] WARN  o.s.b.a.o.j.JpaBaseConfiguration$JpaWebConfiguration.openEntityManagerInViewInterceptor - spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+25-10-2023 16:04:23.702 [main] WARN  o.s.b.a.s.s.UserDetailsServiceAutoConfiguration.getOrDeducePassword - 
+
+Using generated security password: 146abed1-2e98-473e-892a-f597456586e9
+
+This generated password is for development use only. Your security configuration must be updated before running your application in production.
+
+25-10-2023 16:04:23.798 [main] INFO  o.s.b.a.e.web.EndpointLinksResolver.<init> - Exposing 4 endpoint(s) beneath base path '/actuator'
+25-10-2023 16:04:23.810 [main] INFO  o.s.s.web.DefaultSecurityFilterChain.<init> - Will secure any request with [org.springframework.security.web.session.DisableEncodeUrlFilter@26c349fc, org.springframework.security.web.context.request.async.WebAsyncManagerIntegrationFilter@54d0d561, org.springframework.security.web.context.SecurityContextHolderFilter@3a917e07, org.springframework.security.web.header.HeaderWriterFilter@49620576, org.springframework.web.filter.CorsFilter@489a722d, org.springframework.security.web.csrf.CsrfFilter@67629872, org.springframework.security.web.authentication.logout.LogoutFilter@4eb43d2f, org.springframework.security.web.authentication.UsernamePasswordAuthenticationFilter@26864891, org.springframework.security.web.authentication.ui.DefaultLoginPageGeneratingFilter@71cdde0c, org.springframework.security.web.authentication.ui.DefaultLogoutPageGeneratingFilter@3448a248, org.springframework.security.web.authentication.www.BasicAuthenticationFilter@162c89ac, org.springframework.security.web.savedrequest.RequestCacheAwareFilter@6edd80fe, org.springframework.security.web.servletapi.SecurityContextHolderAwareRequestFilter@3c2188b0, org.springframework.security.web.authentication.AnonymousAuthenticationFilter@8788194, org.springframework.security.web.access.ExceptionTranslationFilter@301434fb, org.springframework.security.web.access.intercept.AuthorizationFilter@6d8cbd1a]
+25-10-2023 16:04:23.999 [main] INFO  o.s.b.w.e.tomcat.TomcatWebServer.start - Tomcat started on port(s): 8080 (http) with context path ''
+25-10-2023 16:04:24.012 [main] INFO  c.e.t.TravelProjectApplication.logStarted - Started TravelProjectApplication in 5.517 seconds (process running for 6.412)
+25-10-2023 16:04:24.672 [RMI TCP Connection(3)-192.168.0.129] INFO  o.a.c.c.C.[Tomcat].[localhost].[/].log - Initializing Spring DispatcherServlet 'dispatcherServlet'
+25-10-2023 16:04:24.672 [RMI TCP Connection(3)-192.168.0.129] INFO  o.s.web.servlet.DispatcherServlet.initServletBean - Initializing Servlet 'dispatcherServlet'
+25-10-2023 16:04:24.674 [RMI TCP Connection(3)-192.168.0.129] INFO  o.s.web.servlet.DispatcherServlet.initServletBean - Completed initialization in 0 ms
+25-10-2023 16:12:37.406 [SpringApplicationShutdownHook] INFO  o.s.o.j.LocalContainerEntityManagerFactoryBean.destroy - Closing JPA EntityManagerFactory for persistence unit 'default'
+25-10-2023 16:12:37.409 [SpringApplicationShutdownHook] INFO  com.zaxxer.hikari.HikariDataSource.close - HikariPool-1 - Shutdown initiated...
+25-10-2023 16:12:37.415 [SpringApplicationShutdownHook] INFO  com.zaxxer.hikari.HikariDataSource.close - HikariPool-1 - Shutdown completed.
+25-10-2023 16:12:41.865 [main] INFO  c.e.t.TravelProjectApplication.logStarting - Starting TravelProjectApplication using Java 17.0.7 with PID 9600 (C:\Users\Алексей\IdeaProjects\Travel-Project\target\classes started by Алексей in C:\Users\Алексей\IdeaProjects\Travel-Project)
+25-10-2023 16:12:41.868 [main] INFO  c.e.t.TravelProjectApplication.logStartupProfileInfo - No active profile set, falling back to 1 default profile: "default"
+25-10-2023 16:12:42.874 [main] INFO  o.s.d.r.c.RepositoryConfigurationDelegate.registerRepositoriesIn - Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+25-10-2023 16:12:42.954 [main] INFO  o.s.d.r.c.RepositoryConfigurationDelegate.registerRepositoriesIn - Finished Spring Data repository scanning in 71 ms. Found 5 JPA repository interfaces.
+25-10-2023 16:12:43.565 [main] INFO  o.s.b.w.e.tomcat.TomcatWebServer.initialize - Tomcat initialized with port(s): 8080 (http)
+25-10-2023 16:12:43.575 [main] INFO  o.a.catalina.core.StandardService.log - Starting service [Tomcat]
+25-10-2023 16:12:43.575 [main] INFO  o.a.catalina.core.StandardEngine.log - Starting Servlet engine: [Apache Tomcat/10.1.15]
+25-10-2023 16:12:43.829 [main] INFO  o.apache.jasper.servlet.TldScanner.log - At least one JAR was scanned for TLDs yet contained no TLDs. Enable debug logging for this logger for a complete list of JARs that were scanned but no TLDs were found in them. Skipping unneeded JARs during scanning can improve startup time and JSP compilation time.
+25-10-2023 16:12:43.835 [main] INFO  o.a.c.c.C.[Tomcat].[localhost].[/].log - Initializing Spring embedded WebApplicationContext
+25-10-2023 16:12:43.836 [main] INFO  o.s.b.w.s.c.ServletWebServerApplicationContext.prepareWebApplicationContext - Root WebApplicationContext: initialization completed in 1919 ms
+25-10-2023 16:12:44.081 [main] INFO  o.h.jpa.internal.util.LogHelper.logPersistenceUnitInformation - HHH000204: Processing PersistenceUnitInfo [name: default]
+25-10-2023 16:12:44.145 [main] INFO  org.hibernate.Version.logVersion - HHH000412: Hibernate ORM core version 6.2.13.Final
+25-10-2023 16:12:44.148 [main] INFO  org.hibernate.cfg.Environment.<clinit> - HHH000406: Using bytecode reflection optimizer
+25-10-2023 16:12:44.456 [main] INFO  o.s.o.j.p.SpringPersistenceUnitInfo.addTransformer - No LoadTimeWeaver setup: ignoring JPA class transformer
+25-10-2023 16:12:44.487 [main] INFO  com.zaxxer.hikari.HikariDataSource.getConnection - HikariPool-1 - Starting...
+25-10-2023 16:12:44.773 [main] INFO  com.zaxxer.hikari.pool.HikariPool.checkFailFast - HikariPool-1 - Added connection org.postgresql.jdbc.PgConnection@4bab78ce
+25-10-2023 16:12:44.776 [main] INFO  com.zaxxer.hikari.HikariDataSource.getConnection - HikariPool-1 - Start completed.
+25-10-2023 16:12:45.947 [main] INFO  o.h.e.t.j.p.i.JtaPlatformInitiator.initiateService - HHH000489: No JTA platform available (set 'hibernate.transaction.jta.platform' to enable JTA platform integration)
+25-10-2023 16:12:46.051 [main] INFO  o.s.o.j.LocalContainerEntityManagerFactoryBean.buildNativeEntityManagerFactory - Initialized JPA EntityManagerFactory for persistence unit 'default'
+25-10-2023 16:12:46.420 [main] WARN  o.s.b.a.o.j.JpaBaseConfiguration$JpaWebConfiguration.openEntityManagerInViewInterceptor - spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+25-10-2023 16:12:47.002 [main] WARN  o.s.b.a.s.s.UserDetailsServiceAutoConfiguration.getOrDeducePassword - 
+
+Using generated security password: ab4d91dc-f55b-4e46-85b9-e9cc19597750
+
+This generated password is for development use only. Your security configuration must be updated before running your application in production.
+
+25-10-2023 16:12:47.121 [main] INFO  o.s.b.a.e.web.EndpointLinksResolver.<init> - Exposing 4 endpoint(s) beneath base path '/actuator'
+25-10-2023 16:12:47.138 [main] INFO  o.s.s.web.DefaultSecurityFilterChain.<init> - Will secure any request with [org.springframework.security.web.session.DisableEncodeUrlFilter@6e3552b0, org.springframework.security.web.context.request.async.WebAsyncManagerIntegrationFilter@6971c6b7, org.springframework.security.web.context.SecurityContextHolderFilter@479f738a, org.springframework.security.web.header.HeaderWriterFilter@188500e9, org.springframework.web.filter.CorsFilter@402d45c6, org.springframework.security.web.csrf.CsrfFilter@2cf6dd4d, org.springframework.security.web.authentication.logout.LogoutFilter@74832504, org.springframework.security.web.authentication.UsernamePasswordAuthenticationFilter@59d8a968, org.springframework.security.web.authentication.ui.DefaultLoginPageGeneratingFilter@7d776105, org.springframework.security.web.authentication.ui.DefaultLogoutPageGeneratingFilter@4b37b01e, org.springframework.security.web.authentication.www.BasicAuthenticationFilter@3bd7829b, org.springframework.security.web.savedrequest.RequestCacheAwareFilter@7955b4d4, org.springframework.security.web.servletapi.SecurityContextHolderAwareRequestFilter@3a3f1703, org.springframework.security.web.authentication.AnonymousAuthenticationFilter@f53db1a, org.springframework.security.web.access.ExceptionTranslationFilter@74d4f542, org.springframework.security.web.access.intercept.AuthorizationFilter@3a917e07]
+25-10-2023 16:12:47.373 [main] INFO  o.s.b.w.e.tomcat.TomcatWebServer.start - Tomcat started on port(s): 8080 (http) with context path ''
+25-10-2023 16:12:47.390 [main] INFO  c.e.t.TravelProjectApplication.logStarted - Started TravelProjectApplication in 6.016 seconds (process running for 6.86)
+25-10-2023 16:12:47.893 [RMI TCP Connection(3)-192.168.0.129] INFO  o.a.c.c.C.[Tomcat].[localhost].[/].log - Initializing Spring DispatcherServlet 'dispatcherServlet'
+25-10-2023 16:12:47.893 [RMI TCP Connection(3)-192.168.0.129] INFO  o.s.web.servlet.DispatcherServlet.initServletBean - Initializing Servlet 'dispatcherServlet'
+25-10-2023 16:12:47.895 [RMI TCP Connection(3)-192.168.0.129] INFO  o.s.web.servlet.DispatcherServlet.initServletBean - Completed initialization in 2 ms

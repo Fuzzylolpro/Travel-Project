@@ -23,8 +23,7 @@ import java.sql.Timestamp;
 @Entity(name = "users") // c какой таблицей хотим подружить
 public class Users {
     @Id
-    @SequenceGenerator(name = "seq_users", sequenceName = "users_id_seq", allocationSize = 1)
-    @GeneratedValue(generator = "seq_users", strategy = GenerationType.SEQUENCE)
+    @GeneratedValue(strategy = GenerationType.SEQUENCE)
     private Long id;
     @Size(min = 2, max = 20)
     @NotNull
