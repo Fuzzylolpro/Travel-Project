@@ -17,7 +17,6 @@ public class Country {
     @Id
     @GeneratedValue(strategy = GenerationType.SEQUENCE)
     private Long id;
-    @Size(min = 2, max = 20)
     @NotNull
     @Column(name = "country_name")
     private String countryName;
