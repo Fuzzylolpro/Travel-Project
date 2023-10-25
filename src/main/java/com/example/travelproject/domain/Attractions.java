@@ -6,6 +6,7 @@ import jakarta.persistence.GeneratedValue;
 import jakarta.persistence.GenerationType;
 import jakarta.persistence.Id;
 import jakarta.persistence.ManyToOne;
+import jakarta.persistence.OneToOne;
 import jakarta.persistence.SequenceGenerator;
 import jakarta.validation.constraints.NotNull;
 import jakarta.validation.constraints.Size;
@@ -23,7 +24,9 @@ public class Attractions {
     @Size(min = 2, max = 40)
     @NotNull
     @Column(name = "attractions_name")
-    private String CountryName;
+    private String AttractionsName;
     @ManyToOne
     private City city;
+    @ManyToOne
+    private Country CountryName;
 }
