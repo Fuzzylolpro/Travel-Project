@@ -39,7 +39,7 @@ public class AttractionsService {
     public Boolean updateAttractions(Attractions attractions) {
         try {
             attractionRepository.saveAndFlush(attractions);
-            log.info(String.format("person update"+attractions.getId()));
+            log.info(String.format("attraction update id: "+attractions.getId()));
         }catch (Exception e){
             log.warn(String.format("error",attractions.getId(),e));
             return false;
