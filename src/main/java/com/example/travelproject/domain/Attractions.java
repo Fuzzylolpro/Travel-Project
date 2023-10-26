@@ -18,7 +18,8 @@ import org.springframework.stereotype.Component;
 @Entity(name = "attractions")
 public class Attractions {
     @Id
-    @GeneratedValue(strategy = GenerationType.SEQUENCE)
+    @SequenceGenerator(name = "seq_attractions", sequenceName = "attractions_id_seq", allocationSize = 1)
+    @GeneratedValue(generator = "seq_attractions", strategy = GenerationType.SEQUENCE)
     private Long id;
     @Size(min = 2, max = 40)
     @NotNull
