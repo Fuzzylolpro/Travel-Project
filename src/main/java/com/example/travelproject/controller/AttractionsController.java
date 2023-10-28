@@ -42,7 +42,7 @@ public class AttractionsController {
         return new ResponseEntity<>(HttpStatus.CONFLICT);
     }
 
-    @PostMapping // создает
+    @PostMapping
     public ResponseEntity<HttpStatus> create(@RequestBody Attractions attractions) {
         return new ResponseEntity<>(attractionsService.createAttraction(attractions) ? HttpStatus.CREATED : HttpStatus.CONFLICT);
     }

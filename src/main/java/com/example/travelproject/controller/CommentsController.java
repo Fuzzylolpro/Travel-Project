@@ -43,7 +43,7 @@ public class CommentsController {
         return new ResponseEntity<>(HttpStatus.CONFLICT);
     }
 
-    @PostMapping // создает
+    @PostMapping
     public ResponseEntity<HttpStatus> create(@RequestBody Comments comments) {
         return new ResponseEntity<>(commentsService.createComments(comments) ? HttpStatus.CREATED : HttpStatus.CONFLICT);
     }
