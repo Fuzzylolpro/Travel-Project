@@ -2,7 +2,6 @@ package com.example.travelproject.controller;
 
 import com.example.travelproject.domain.Attractions;
 import com.example.travelproject.service.AttractionsService;
-import io.swagger.v3.oas.annotations.Parameter;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;

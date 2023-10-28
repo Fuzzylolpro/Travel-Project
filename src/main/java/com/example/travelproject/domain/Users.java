@@ -18,7 +18,7 @@ import java.sql.Timestamp;
 
 @Data
 @Component
-@Entity(name = "users") // c какой таблицей хотим подружить
+@Entity(name = "users")
 public class Users {
     @Id
     @SequenceGenerator(name = "seq_users", sequenceName = "users_id_seq", allocationSize = 1)

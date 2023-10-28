@@ -1,6 +1,5 @@
 package com.example.travelproject.controller;
 
-import com.example.travelproject.domain.Attractions;
 import com.example.travelproject.domain.City;
 import com.example.travelproject.service.CityService;
 import lombok.extern.slf4j.Slf4j;
