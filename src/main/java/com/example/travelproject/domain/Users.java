@@ -12,6 +12,7 @@ import jakarta.validation.constraints.Max;
 import jakarta.validation.constraints.NotNull;
 import jakarta.validation.constraints.Size;
 import lombok.Data;
+import org.hibernate.annotations.CreationTimestamp;
 import org.springframework.stereotype.Component;
 
 import java.sql.Timestamp;
@@ -37,6 +38,7 @@ public class Users {
     private Boolean isMarried;
     @Temporal(TemporalType.TIMESTAMP) // из строки в timestamp
     @Column(name = "created")
+    @CreationTimestamp
     private Timestamp created;
 }
 

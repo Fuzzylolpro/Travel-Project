@@ -130,3 +130,65 @@
 28-10-2023 15:25:44.496 [SpringApplicationShutdownHook] INFO  o.s.o.j.LocalContainerEntityManagerFactoryBean.destroy - Closing JPA EntityManagerFactory for persistence unit 'default'
 28-10-2023 15:25:44.499 [SpringApplicationShutdownHook] INFO  com.zaxxer.hikari.HikariDataSource.close - HikariPool-1 - Shutdown initiated...
 28-10-2023 15:25:44.505 [SpringApplicationShutdownHook] INFO  com.zaxxer.hikari.HikariDataSource.close - HikariPool-1 - Shutdown completed.
+28-10-2023 15:32:29.253 [main] INFO  c.e.t.TravelProjectApplication.logStarting - Starting TravelProjectApplication using Java 17.0.7 with PID 1756 (C:\Users\Алексей\IdeaProjects\Travel-Project\target\classes started by Алексей in C:\Users\Алексей\IdeaProjects\Travel-Project)
+28-10-2023 15:32:29.258 [main] INFO  c.e.t.TravelProjectApplication.logStartupProfileInfo - No active profile set, falling back to 1 default profile: "default"
+28-10-2023 15:32:30.431 [main] INFO  o.s.d.r.c.RepositoryConfigurationDelegate.registerRepositoriesIn - Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+28-10-2023 15:32:30.530 [main] INFO  o.s.d.r.c.RepositoryConfigurationDelegate.registerRepositoriesIn - Finished Spring Data repository scanning in 89 ms. Found 5 JPA repository interfaces.
+28-10-2023 15:32:31.177 [main] INFO  o.s.b.w.e.tomcat.TomcatWebServer.initialize - Tomcat initialized with port(s): 8080 (http)
+28-10-2023 15:32:31.189 [main] INFO  o.a.catalina.core.StandardService.log - Starting service [Tomcat]
+28-10-2023 15:32:31.189 [main] INFO  o.a.catalina.core.StandardEngine.log - Starting Servlet engine: [Apache Tomcat/10.1.15]
+28-10-2023 15:32:31.440 [main] INFO  o.apache.jasper.servlet.TldScanner.log - At least one JAR was scanned for TLDs yet contained no TLDs. Enable debug logging for this logger for a complete list of JARs that were scanned but no TLDs were found in them. Skipping unneeded JARs during scanning can improve startup time and JSP compilation time.
+28-10-2023 15:32:31.447 [main] INFO  o.a.c.c.C.[Tomcat].[localhost].[/].log - Initializing Spring embedded WebApplicationContext
+28-10-2023 15:32:31.448 [main] INFO  o.s.b.w.s.c.ServletWebServerApplicationContext.prepareWebApplicationContext - Root WebApplicationContext: initialization completed in 2133 ms
+28-10-2023 15:32:31.701 [main] INFO  o.h.jpa.internal.util.LogHelper.logPersistenceUnitInformation - HHH000204: Processing PersistenceUnitInfo [name: default]
+28-10-2023 15:32:31.769 [main] INFO  org.hibernate.Version.logVersion - HHH000412: Hibernate ORM core version 6.2.13.Final
+28-10-2023 15:32:31.772 [main] INFO  org.hibernate.cfg.Environment.<clinit> - HHH000406: Using bytecode reflection optimizer
+28-10-2023 15:32:32.120 [main] INFO  o.s.o.j.p.SpringPersistenceUnitInfo.addTransformer - No LoadTimeWeaver setup: ignoring JPA class transformer
+28-10-2023 15:32:32.160 [main] INFO  com.zaxxer.hikari.HikariDataSource.getConnection - HikariPool-1 - Starting...
+28-10-2023 15:32:32.480 [main] INFO  com.zaxxer.hikari.pool.HikariPool.checkFailFast - HikariPool-1 - Added connection org.postgresql.jdbc.PgConnection@7497a554
+28-10-2023 15:32:32.483 [main] INFO  com.zaxxer.hikari.HikariDataSource.getConnection - HikariPool-1 - Start completed.
+28-10-2023 15:32:33.722 [main] INFO  o.h.e.t.j.p.i.JtaPlatformInitiator.initiateService - HHH000489: No JTA platform available (set 'hibernate.transaction.jta.platform' to enable JTA platform integration)
+28-10-2023 15:32:33.860 [main] INFO  o.s.o.j.LocalContainerEntityManagerFactoryBean.buildNativeEntityManagerFactory - Initialized JPA EntityManagerFactory for persistence unit 'default'
+28-10-2023 15:32:34.306 [main] WARN  o.s.b.a.o.j.JpaBaseConfiguration$JpaWebConfiguration.openEntityManagerInViewInterceptor - spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+28-10-2023 15:32:34.798 [main] INFO  o.s.b.a.e.web.EndpointLinksResolver.<init> - Exposing 4 endpoint(s) beneath base path '/actuator'
+28-10-2023 15:32:34.890 [main] INFO  o.s.b.w.e.tomcat.TomcatWebServer.start - Tomcat started on port(s): 8080 (http) with context path ''
+28-10-2023 15:32:34.911 [main] INFO  c.e.t.TravelProjectApplication.logStarted - Started TravelProjectApplication in 6.182 seconds (process running for 7.168)
+28-10-2023 15:32:35.054 [RMI TCP Connection(2)-192.168.0.129] INFO  o.a.c.c.C.[Tomcat].[localhost].[/].log - Initializing Spring DispatcherServlet 'dispatcherServlet'
+28-10-2023 15:32:35.055 [RMI TCP Connection(2)-192.168.0.129] INFO  o.s.web.servlet.DispatcherServlet.initServletBean - Initializing Servlet 'dispatcherServlet'
+28-10-2023 15:32:35.056 [RMI TCP Connection(2)-192.168.0.129] INFO  o.s.web.servlet.DispatcherServlet.initServletBean - Completed initialization in 1 ms
+28-10-2023 15:32:54.084 [http-nio-8080-exec-1] INFO  c.e.t.service.UsersService.createUsers - users created Сергей Повираев
+28-10-2023 15:36:03.266 [http-nio-8080-exec-3] WARN  o.h.e.jdbc.spi.SqlExceptionHelper.logExceptions - SQL Error: 0, SQLState: 23502
+28-10-2023 15:36:03.267 [http-nio-8080-exec-3] ERROR o.h.e.jdbc.spi.SqlExceptionHelper.logExceptions - ОШИБКА: значение NULL в столбце "created" отношения "users" нарушает ограничение NOT NULL
+  Подробности: Ошибочная строка содержит (25, t, null, 4, Сергей, Повираев).
+28-10-2023 15:36:03.277 [http-nio-8080-exec-3] WARN  c.e.t.service.UsersService.createUsers - error
+28-10-2023 15:36:50.887 [http-nio-8080-exec-6] INFO  c.e.t.service.UsersService.createUsers - users created Сергей Повираев
+28-10-2023 15:51:46.411 [SpringApplicationShutdownHook] INFO  o.s.o.j.LocalContainerEntityManagerFactoryBean.destroy - Closing JPA EntityManagerFactory for persistence unit 'default'
+28-10-2023 15:51:46.414 [SpringApplicationShutdownHook] INFO  com.zaxxer.hikari.HikariDataSource.close - HikariPool-1 - Shutdown initiated...
+28-10-2023 15:51:46.418 [SpringApplicationShutdownHook] INFO  com.zaxxer.hikari.HikariDataSource.close - HikariPool-1 - Shutdown completed.
+28-10-2023 15:53:09.624 [main] INFO  c.e.t.TravelProjectApplication.logStarting - Starting TravelProjectApplication using Java 17.0.7 with PID 8236 (C:\Users\Алексей\IdeaProjects\Travel-Project\target\classes started by Алексей in C:\Users\Алексей\IdeaProjects\Travel-Project)
+28-10-2023 15:53:09.627 [main] INFO  c.e.t.TravelProjectApplication.logStartupProfileInfo - No active profile set, falling back to 1 default profile: "default"
+28-10-2023 15:53:10.406 [main] INFO  o.s.d.r.c.RepositoryConfigurationDelegate.registerRepositoriesIn - Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+28-10-2023 15:53:10.464 [main] INFO  o.s.d.r.c.RepositoryConfigurationDelegate.registerRepositoriesIn - Finished Spring Data repository scanning in 51 ms. Found 5 JPA repository interfaces.
+28-10-2023 15:53:10.884 [main] INFO  o.s.b.w.e.tomcat.TomcatWebServer.initialize - Tomcat initialized with port(s): 8080 (http)
+28-10-2023 15:53:10.893 [main] INFO  o.a.catalina.core.StandardService.log - Starting service [Tomcat]
+28-10-2023 15:53:10.893 [main] INFO  o.a.catalina.core.StandardEngine.log - Starting Servlet engine: [Apache Tomcat/10.1.15]
+28-10-2023 15:53:11.089 [main] INFO  o.apache.jasper.servlet.TldScanner.log - At least one JAR was scanned for TLDs yet contained no TLDs. Enable debug logging for this logger for a complete list of JARs that were scanned but no TLDs were found in them. Skipping unneeded JARs during scanning can improve startup time and JSP compilation time.
+28-10-2023 15:53:11.095 [main] INFO  o.a.c.c.C.[Tomcat].[localhost].[/].log - Initializing Spring embedded WebApplicationContext
+28-10-2023 15:53:11.095 [main] INFO  o.s.b.w.s.c.ServletWebServerApplicationContext.prepareWebApplicationContext - Root WebApplicationContext: initialization completed in 1432 ms
+28-10-2023 15:53:11.287 [main] INFO  o.h.jpa.internal.util.LogHelper.logPersistenceUnitInformation - HHH000204: Processing PersistenceUnitInfo [name: default]
+28-10-2023 15:53:11.345 [main] INFO  org.hibernate.Version.logVersion - HHH000412: Hibernate ORM core version 6.2.13.Final
+28-10-2023 15:53:11.348 [main] INFO  org.hibernate.cfg.Environment.<clinit> - HHH000406: Using bytecode reflection optimizer
+28-10-2023 15:53:11.592 [main] INFO  o.s.o.j.p.SpringPersistenceUnitInfo.addTransformer - No LoadTimeWeaver setup: ignoring JPA class transformer
+28-10-2023 15:53:11.619 [main] INFO  com.zaxxer.hikari.HikariDataSource.getConnection - HikariPool-1 - Starting...
+28-10-2023 15:53:11.768 [main] INFO  com.zaxxer.hikari.pool.HikariPool.checkFailFast - HikariPool-1 - Added connection org.postgresql.jdbc.PgConnection@b56c222
+28-10-2023 15:53:11.770 [main] INFO  com.zaxxer.hikari.HikariDataSource.getConnection - HikariPool-1 - Start completed.
+28-10-2023 15:53:12.711 [main] INFO  o.h.e.t.j.p.i.JtaPlatformInitiator.initiateService - HHH000489: No JTA platform available (set 'hibernate.transaction.jta.platform' to enable JTA platform integration)
+28-10-2023 15:53:12.814 [main] INFO  o.s.o.j.LocalContainerEntityManagerFactoryBean.buildNativeEntityManagerFactory - Initialized JPA EntityManagerFactory for persistence unit 'default'
+28-10-2023 15:53:13.171 [main] WARN  o.s.b.a.o.j.JpaBaseConfiguration$JpaWebConfiguration.openEntityManagerInViewInterceptor - spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+28-10-2023 15:53:13.598 [main] INFO  o.s.b.a.e.web.EndpointLinksResolver.<init> - Exposing 4 endpoint(s) beneath base path '/actuator'
+28-10-2023 15:53:13.667 [main] INFO  o.s.b.w.e.tomcat.TomcatWebServer.start - Tomcat started on port(s): 8080 (http) with context path ''
+28-10-2023 15:53:13.679 [main] INFO  c.e.t.TravelProjectApplication.logStarted - Started TravelProjectApplication in 4.424 seconds (process running for 5.078)
+28-10-2023 15:53:14.079 [RMI TCP Connection(3)-192.168.0.129] INFO  o.a.c.c.C.[Tomcat].[localhost].[/].log - Initializing Spring DispatcherServlet 'dispatcherServlet'
+28-10-2023 15:53:14.079 [RMI TCP Connection(3)-192.168.0.129] INFO  o.s.web.servlet.DispatcherServlet.initServletBean - Initializing Servlet 'dispatcherServlet'
+28-10-2023 15:53:14.082 [RMI TCP Connection(3)-192.168.0.129] INFO  o.s.web.servlet.DispatcherServlet.initServletBean - Completed initialization in 2 ms
+28-10-2023 15:53:19.464 [http-nio-8080-exec-2] INFO  c.e.t.service.UsersService.createUsers - users created Сергей Повираев
