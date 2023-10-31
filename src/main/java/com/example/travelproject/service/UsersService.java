@@ -2,9 +2,13 @@ package com.example.travelproject.service;
 
 import com.example.travelproject.domain.Attractions;
 import com.example.travelproject.domain.Users;
+import com.example.travelproject.repository.AttractionRepository;
 import com.example.travelproject.repository.UsersRepository;
+import lombok.AllArgsConstructor;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.stereotype.Service;
+import org.springframework.web.bind.annotation.PathVariable;
+import org.springframework.web.bind.annotation.RequestParam;
 
 import java.sql.Timestamp;
 import java.util.List;
@@ -12,13 +16,11 @@ import java.util.Optional;
 
 @Service
 @Slf4j
+@AllArgsConstructor
 public class UsersService {
 
     private final UsersRepository usersRepository;
-
-    public UsersService(UsersRepository usersRepository) {
-        this.usersRepository = usersRepository;
-    }
+    private final AttractionRepository attractionRepository;
 
 
     public List<Users> getAll() {

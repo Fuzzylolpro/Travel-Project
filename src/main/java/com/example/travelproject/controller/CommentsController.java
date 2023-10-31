@@ -1,6 +1,9 @@
 package com.example.travelproject.controller;
 
+import com.example.travelproject.domain.Attractions;
 import com.example.travelproject.domain.Comments;
+import com.example.travelproject.repository.AttractionRepository;
+import com.example.travelproject.repository.CommentRepository;
 import com.example.travelproject.service.CommentsService;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.http.HttpStatus;
@@ -22,9 +25,13 @@ import java.util.Optional;
 @RequestMapping("/comments")
 public class CommentsController {
     private final CommentsService commentsService;
+    private final AttractionRepository attractionRepository;
+    private final CommentRepository commentRepository;
 
-    public CommentsController(CommentsService commentsService) {
+    public CommentsController(CommentsService commentsService, CommentRepository commentRepository, AttractionRepository attractionRepository, CommentRepository commentRepository1) {
         this.commentsService = commentsService;
+        this.attractionRepository = attractionRepository;
+        this.commentRepository = commentRepository1;
     }
 
 
@@ -43,9 +50,16 @@ public class CommentsController {
         return new ResponseEntity<>(HttpStatus.CONFLICT);
     }
 
-    @PostMapping
-    public ResponseEntity<HttpStatus> create(@RequestBody Comments comments) {
-        return new ResponseEntity<>(commentsService.createComments(comments) ? HttpStatus.CREATED : HttpStatus.CONFLICT);
+    //@PostMapping
+    //public ResponseEntity<HttpStatus> create(@RequestBody Comments comments) {
+    //    return new ResponseEntity<>(commentsService.createComments(comments) ? HttpStatus.CREATED : HttpStatus.CONFLICT);
+    //}
+    @PostMapping("/attractions/{id}/comments")
+    public Comments addComment(@PathVariable Long attractionsId, @RequestBody Comments comments) {
+        Attractions attractions = attractionRepository.findById(attractionsId).orElseThrow(
+                () -> new RuntimeException("Attractions not found with id: " + attractionsId));
+        comments.setAttractions(attractions);
+        return commentRepository.save(comments);
     }
 
     @DeleteMapping("/{id}")
@@ -58,5 +72,7 @@ public class CommentsController {
     public ResponseEntity<HttpStatus> update(@RequestBody Comments comments) {
         return new ResponseEntity<>(commentsService.updateComments(comments) ? HttpStatus.NO_CONTENT : HttpStatus.CONFLICT);
     }
+
+
 }
 
