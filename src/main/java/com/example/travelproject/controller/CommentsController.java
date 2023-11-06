@@ -41,7 +41,7 @@ public class CommentsController {
         return new ResponseEntity<>(commentsList, HttpStatus.OK);
     }
 
-    @GetMapping("/{id}")
+    @GetMapping("attractions/{id}")
     public ResponseEntity<Comments> getCommentsId(@PathVariable("id") Long id) {
         Optional<Comments> comments = commentsService.getCommentsId(id);
         if (comments.isPresent()) {
@@ -54,10 +54,10 @@ public class CommentsController {
     //public ResponseEntity<HttpStatus> create(@RequestBody Comments comments) {
     //    return new ResponseEntity<>(commentsService.createComments(comments) ? HttpStatus.CREATED : HttpStatus.CONFLICT);
     //}
-    @PostMapping("/attractions/{id}/comments")
-    public Comments addComment(@PathVariable Long attractionsId, @RequestBody Comments comments) {
-        Attractions attractions = attractionRepository.findById(attractionsId).orElseThrow(
-                () -> new RuntimeException("Attractions not found with id: " + attractionsId));
+    @PostMapping("/attractions/{id}")
+    public Comments addComment(@PathVariable Long id, @RequestBody Comments comments) {
+        Attractions attractions = attractionRepository.findById(id).orElseThrow(
+                () -> new RuntimeException("Attractions not found with id: " + id));
         comments.setAttractions(attractions);
         return commentRepository.save(comments);
     }

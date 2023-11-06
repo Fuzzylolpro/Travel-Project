@@ -1,6 +1,5 @@
 package com.example.travelproject.service;
 
-import com.example.travelproject.domain.City;
 import com.example.travelproject.domain.Comments;
 import com.example.travelproject.repository.CommentRepository;
 import lombok.extern.slf4j.Slf4j;
@@ -52,5 +51,6 @@ public class CommentsService {
         }
         return true;
     }
+
 }
 
