@@ -1,10 +1,15 @@
 package com.example.travelproject.domain;
 
+import com.fasterxml.jackson.annotation.JsonBackReference;
 import jakarta.persistence.Column;
 import jakarta.persistence.Entity;
 import jakarta.persistence.GeneratedValue;
 import jakarta.persistence.GenerationType;
 import jakarta.persistence.Id;
+import jakarta.persistence.JoinColumn;
+import jakarta.persistence.JoinColumns;
+import jakarta.persistence.JoinTable;
+import jakarta.persistence.ManyToMany;
 import jakarta.persistence.SequenceGenerator;
 import jakarta.persistence.Temporal;
 import jakarta.persistence.TemporalType;
@@ -16,6 +21,8 @@ import org.hibernate.annotations.CreationTimestamp;
 import org.springframework.stereotype.Component;
 
 import java.sql.Timestamp;
+import java.util.List;
+import java.util.Set;
 
 @Data
 @Component
@@ -40,5 +47,9 @@ public class Users {
     @Column(name = "created")
     @CreationTimestamp
     private Timestamp created;
+    @ManyToMany
+    @JsonBackReference
+    @JoinTable(name = "i_user_attraction",joinColumns = @JoinColumn(name ="user_id"),inverseJoinColumns = @JoinColumn(name = "attractions_id"))
+    private Set<Attractions> favoriteAttractions;
 }
 

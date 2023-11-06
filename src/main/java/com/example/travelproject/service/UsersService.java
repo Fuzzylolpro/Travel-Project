@@ -7,10 +7,8 @@ import com.example.travelproject.repository.UsersRepository;
 import lombok.AllArgsConstructor;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.stereotype.Service;
-import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestParam;
 
-import java.sql.Timestamp;
 import java.util.List;
 import java.util.Optional;
 
@@ -34,7 +32,7 @@ public class UsersService {
     public Boolean createUsers(Users users) {
         try {
             usersRepository.save(users);
-            log.info(String.format("users created " + users.getFirstName() +" "+ users.getSecondName()));
+            log.info(String.format("users created " + users.getFirstName() + " " + users.getSecondName()));
         } catch (Exception e) {
             log.warn(String.format("error", users.getFirstName()));
             return false;
@@ -56,5 +54,20 @@ public class UsersService {
         }
         return true;
     }
+
+    public void addFavoriteCountry(@RequestParam Long userId, @RequestParam Long countryId) {
+        Optional<Users> userOptional = usersRepository.findById(userId);
+        Optional<Attractions> attractionsOptional = attractionRepository.findById(countryId);
+
+
+        if (userOptional.isPresent() && attractionsOptional.isPresent()) {
+            Users user = userOptional.get();
+            Attractions attractions = attractionsOptional.get();
+
+            user.getFavoriteAttractions().add(attractions);
+            usersRepository.save(user);
+        }
+    }
 }
+
 

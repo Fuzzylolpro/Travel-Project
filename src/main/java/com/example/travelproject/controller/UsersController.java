@@ -1,6 +1,8 @@
 package com.example.travelproject.controller;
 
+import com.example.travelproject.domain.Attractions;
 import com.example.travelproject.domain.Users;
+import com.example.travelproject.repository.UsersRepository;
 import com.example.travelproject.service.UsersService;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.http.HttpStatus;
@@ -12,10 +14,12 @@ import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.PutMapping;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.RestController;
 
 import java.util.List;
 import java.util.Optional;
+import java.util.Set;
 
 @RestController
 @Slf4j
@@ -24,9 +28,11 @@ public class UsersController {
 
 
     private final UsersService usersService;
+    private final UsersRepository usersRepository;
 
-    public UsersController(UsersService usersService) {
+    public UsersController(UsersService usersService, UsersRepository usersRepository) {
         this.usersService = usersService;
+        this.usersRepository = usersRepository;
     }
 
 
@@ -60,4 +66,20 @@ public class UsersController {
     public ResponseEntity<HttpStatus> update(@RequestBody Users users) {
         return new ResponseEntity<>(usersService.updateUsers(users) ? HttpStatus.NO_CONTENT : HttpStatus.CONFLICT);
     }
+
+    @PostMapping("/addFavoriteAttractions")
+    public ResponseEntity<HttpStatus> addFavoriteAttractions(@RequestParam Long userId,@RequestBody Long attractionsId){
+        usersService.addFavoriteCountry(userId,attractionsId);
+        return new ResponseEntity<>(HttpStatus.CREATED);
+    }
+    @GetMapping("/{userId}/favoriteAttractions")
+    public ResponseEntity<Set<Attractions>> getAllFavoriteAttractions(@PathVariable Long userId){
+        Users users = usersRepository.findById(userId).orElse(null);
+        if (users==null){
+            return ResponseEntity.notFound().build();
+        }
+        Set<Attractions> favoriteAttractions = users.getFavoriteAttractions();
+        return ResponseEntity.ok(favoriteAttractions);
+    }
+
 }
