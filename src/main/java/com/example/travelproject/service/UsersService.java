@@ -7,7 +7,6 @@ import com.example.travelproject.repository.UsersRepository;
 import lombok.AllArgsConstructor;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.stereotype.Service;
-import org.springframework.web.bind.annotation.RequestParam;
 
 import java.util.List;
 import java.util.Optional;
@@ -55,9 +54,9 @@ public class UsersService {
         return true;
     }
 
-    public void addFavoriteCountry(@RequestParam Long userId, @RequestParam Long countryId) {
+    public void addFavoriteAttractions(Long userId,Long attractionsId) {
         Optional<Users> userOptional = usersRepository.findById(userId);
-        Optional<Attractions> attractionsOptional = attractionRepository.findById(countryId);
+        Optional<Attractions> attractionsOptional = attractionRepository.findById(attractionsId);
 
 
         if (userOptional.isPresent() && attractionsOptional.isPresent()) {

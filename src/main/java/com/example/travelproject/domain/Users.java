@@ -43,13 +43,13 @@ public class Users {
     private Integer age;
     @Column(name = "is_married")
     private Boolean isMarried;
-    @Temporal(TemporalType.TIMESTAMP) // из строки в timestamp
+    @Temporal(TemporalType.TIMESTAMP)
     @Column(name = "created")
     @CreationTimestamp
     private Timestamp created;
     @ManyToMany
     @JsonBackReference
-    @JoinTable(name = "i_user_attraction",joinColumns = @JoinColumn(name ="user_id"),inverseJoinColumns = @JoinColumn(name = "attractions_id"))
+    @JoinTable(name = "l_user_attraction",joinColumns = @JoinColumn(name ="user_id"),inverseJoinColumns = @JoinColumn(name = "attractions_id"))
     private Set<Attractions> favoriteAttractions;
 }
 

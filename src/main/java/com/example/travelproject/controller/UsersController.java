@@ -68,18 +68,18 @@ public class UsersController {
     }
 
     @PostMapping("/addFavoriteAttractions")
-    public ResponseEntity<HttpStatus> addFavoriteAttractions(@RequestParam Long userId,@RequestBody Long attractionsId){
-        usersService.addFavoriteCountry(userId,attractionsId);
+    public ResponseEntity<HttpStatus> addFavoriteAttractions(@RequestParam Long userId, @RequestParam Long attractionsId) {
+        usersService.addFavoriteAttractions(userId, attractionsId);
         return new ResponseEntity<>(HttpStatus.CREATED);
     }
+
     @GetMapping("/{userId}/favoriteAttractions")
-    public ResponseEntity<Set<Attractions>> getAllFavoriteAttractions(@PathVariable Long userId){
+    public ResponseEntity<Set<Attractions>> getAllFavoriteAttractionsByUser(@PathVariable Long userId) {
         Users users = usersRepository.findById(userId).orElse(null);
-        if (users==null){
+        if (users == null) {
             return ResponseEntity.notFound().build();
         }
         Set<Attractions> favoriteAttractions = users.getFavoriteAttractions();
         return ResponseEntity.ok(favoriteAttractions);
     }
-
 }
