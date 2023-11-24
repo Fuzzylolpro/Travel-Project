@@ -26,4 +26,14 @@ public class ExceptionResolver {
         log.info(String.valueOf(e));
         return new ResponseEntity<>(HttpStatus.FORBIDDEN);
     }
+    @ExceptionHandler(SameUserInDatabaseException.class)
+    public ResponseEntity<HttpStatus> SameUserInDatabaseException(Exception e){
+        log.info(String.valueOf(e));
+        return new ResponseEntity<>(HttpStatus.UNAUTHORIZED);
+    }
+    @ExceptionHandler(UserFromDatabaseNotFound.class)
+    public ResponseEntity<HttpStatus> userFromDatabaseNotFoundException(Exception e){
+        log.info(String.valueOf(e));
+        return new ResponseEntity<>(HttpStatus.UNAUTHORIZED);
+    }
 }

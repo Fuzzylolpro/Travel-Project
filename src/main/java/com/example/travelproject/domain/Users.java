@@ -17,6 +17,8 @@ import jakarta.validation.constraints.NotNull;
 import jakarta.validation.constraints.Size;
 import lombok.Data;
 import org.hibernate.annotations.CreationTimestamp;
+import org.hibernate.annotations.DialectOverride;
+import org.springframework.boot.context.properties.bind.DefaultValue;
 import org.springframework.stereotype.Component;
 
 import java.sql.Timestamp;
@@ -39,7 +41,7 @@ public class Users {
     @Max(value = 120)
     @Column(name = "age")
     private Integer age;
-    @Column(name = "is_married")
+    @Column(name = "is_married",columnDefinition = "false")
     private Boolean isMarried;
     @Temporal(TemporalType.TIMESTAMP)
     @Column(name = "created")
@@ -47,7 +49,7 @@ public class Users {
     private Timestamp created;
     @ManyToMany
     @JsonBackReference
-    @JoinTable(name = "l_user_attraction",joinColumns = @JoinColumn(name ="user_id"),inverseJoinColumns = @JoinColumn(name = "attractions_id"))
+    @JoinTable(name = "l_user_attraction", joinColumns = @JoinColumn(name = "user_id"), inverseJoinColumns = @JoinColumn(name = "attractions_id"))
     private Set<Attractions> favoriteAttractions;
 }
 
