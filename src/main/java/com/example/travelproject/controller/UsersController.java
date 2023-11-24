@@ -75,11 +75,11 @@ public class UsersController {
 
     @GetMapping("/{userId}/favoriteAttractions")
     public ResponseEntity<Set<Attractions>> getAllFavoriteAttractionsByUser(@PathVariable Long userId) {
-        Users users = usersRepository.findById(userId).orElse(null);
-        if (users == null) {
-            return ResponseEntity.notFound().build();
+        Optional<Users> users = usersRepository.findById(userId);
+        if (users.isPresent()) {
+            Set<Attractions> favoriteAttractions = users.orElseThrow().getFavoriteAttractions();
+            return ResponseEntity.ok(favoriteAttractions);
         }
-        Set<Attractions> favoriteAttractions = users.getFavoriteAttractions();
-        return ResponseEntity.ok(favoriteAttractions);
+        return new ResponseEntity<>(HttpStatus.CONFLICT);
     }
 }

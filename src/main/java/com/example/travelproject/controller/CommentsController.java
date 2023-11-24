@@ -28,10 +28,10 @@ public class CommentsController {
     private final AttractionRepository attractionRepository;
     private final CommentRepository commentRepository;
 
-    public CommentsController(CommentsService commentsService, CommentRepository commentRepository, AttractionRepository attractionRepository, CommentRepository commentRepository1) {
+    public CommentsController(CommentsService commentsService, AttractionRepository attractionRepository, CommentRepository commentRepository) {
         this.commentsService = commentsService;
         this.attractionRepository = attractionRepository;
-        this.commentRepository = commentRepository1;
+        this.commentRepository = commentRepository;
     }
 
 

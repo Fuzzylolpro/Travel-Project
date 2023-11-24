@@ -4,7 +4,6 @@ import com.example.travelproject.domain.Attractions;
 import com.example.travelproject.domain.Users;
 import com.example.travelproject.repository.AttractionRepository;
 import com.example.travelproject.repository.UsersRepository;
-import lombok.AllArgsConstructor;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.stereotype.Service;
 
@@ -13,12 +12,15 @@ import java.util.Optional;
 
 @Service
 @Slf4j
-@AllArgsConstructor
 public class UsersService {
 
     private final UsersRepository usersRepository;
     private final AttractionRepository attractionRepository;
 
+    public UsersService(UsersRepository usersRepository, AttractionRepository attractionRepository) {
+        this.usersRepository = usersRepository;
+        this.attractionRepository = attractionRepository;
+    }
 
     public List<Users> getAll() {
         return usersRepository.findAll();
@@ -54,17 +56,19 @@ public class UsersService {
         return true;
     }
 
-    public void addFavoriteAttractions(Long userId,Long attractionsId) {
-        Optional<Users> userOptional = usersRepository.findById(userId);
-        Optional<Attractions> attractionsOptional = attractionRepository.findById(attractionsId);
-
-
-        if (userOptional.isPresent() && attractionsOptional.isPresent()) {
-            Users user = userOptional.get();
-            Attractions attractions = attractionsOptional.get();
-
-            user.getFavoriteAttractions().add(attractions);
-            usersRepository.save(user);
+    public void addFavoriteAttractions(Long userId, Long attractionsId) {
+        try {
+            Optional<Users> userOptional = usersRepository.findById(userId);
+            Optional<Attractions> attractionsOptional = attractionRepository.findById(attractionsId);
+            if (userOptional.isPresent() && attractionsOptional.isPresent()) {
+                Users user = userOptional.get();
+                Attractions attractions = attractionsOptional.get();
+                user.getFavoriteAttractions().add(attractions);
+                usersRepository.save(user);
+            }
+            log.info(String.format("users " + userId + "add favorite attractions " + attractionsId));
+        } catch (Exception e) {
+            log.warn(String.format("Error", userId, e));
         }
     }
 }
