@@ -2,9 +2,12 @@ package com.example.travelproject.service;
 
 import com.example.travelproject.domain.Attractions;
 import com.example.travelproject.domain.Users;
+import com.example.travelproject.exception_resolver.NoAccessByIdExceptions;
 import com.example.travelproject.repository.AttractionRepository;
 import com.example.travelproject.repository.UsersRepository;
+import com.example.travelproject.security.service.SecurityService;
 import lombok.extern.slf4j.Slf4j;
+import org.springframework.security.core.context.SecurityContextHolder;
 import org.springframework.stereotype.Service;
 
 import java.util.List;
@@ -16,10 +19,12 @@ public class UsersService {
 
     private final UsersRepository usersRepository;
     private final AttractionRepository attractionRepository;
+    private final SecurityService securityService;
 
-    public UsersService(UsersRepository usersRepository, AttractionRepository attractionRepository) {
+    public UsersService(UsersRepository usersRepository, AttractionRepository attractionRepository, SecurityService securityService) {
         this.usersRepository = usersRepository;
         this.attractionRepository = attractionRepository;
+        this.securityService = securityService;
     }
 
     public List<Users> getAll() {
@@ -27,7 +32,10 @@ public class UsersService {
     }
 
     public Optional<Users> getUsersId(long id) {
-        return usersRepository.findById(id);
+        if (securityService.checkAccessById(id)) {
+            return usersRepository.findById(id);
+        }
+        throw new NoAccessByIdExceptions(id, SecurityContextHolder.getContext().getAuthentication().getName());
     }
 
     public Boolean createUsers(Users users) {
@@ -42,7 +50,14 @@ public class UsersService {
     }
 
     public void deleteUsersById(Long id) {
-        usersRepository.deleteById(id);
+        try {
+            if (securityService.checkAccessById(id)) {
+                usersRepository.deleteById(id);
+                log.info(String.format("users delete id: " + id));
+            }
+        }catch (Exception e){
+            log.warn(String.format("error ", id, e));
+        }
     }
 
     public Boolean updateUsers(Users users) {
@@ -50,7 +65,7 @@ public class UsersService {
             usersRepository.saveAndFlush(users);
             log.info(String.format("users update id: " + users.getId()));
         } catch (Exception e) {
-            log.warn(String.format("error", users.getId(), e));
+            log.warn(String.format("error ", users.getId(), e));
             return false;
         }
         return true;
@@ -60,7 +75,7 @@ public class UsersService {
         try {
             Optional<Users> userOptional = usersRepository.findById(userId);
             Optional<Attractions> attractionsOptional = attractionRepository.findById(attractionsId);
-            if (userOptional.isPresent() && attractionsOptional.isPresent()) {
+            if (userOptional.isPresent() && attractionsOptional.isPresent() && securityService.checkAccessById(userId)) {
                 Users user = userOptional.get();
                 Attractions attractions = attractionsOptional.get();
                 user.getFavoriteAttractions().add(attractions);

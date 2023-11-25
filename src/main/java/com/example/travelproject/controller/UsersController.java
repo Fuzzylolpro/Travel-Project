@@ -3,6 +3,7 @@ package com.example.travelproject.controller;
 import com.example.travelproject.domain.Attractions;
 import com.example.travelproject.domain.Users;
 import com.example.travelproject.repository.UsersRepository;
+import com.example.travelproject.security.service.SecurityService;
 import com.example.travelproject.service.UsersService;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.http.HttpStatus;
@@ -29,10 +30,12 @@ public class UsersController {
 
     private final UsersService usersService;
     private final UsersRepository usersRepository;
+    private final SecurityService securityService;
 
-    public UsersController(UsersService usersService, UsersRepository usersRepository) {
+    public UsersController(UsersService usersService, UsersRepository usersRepository, SecurityService securityService) {
         this.usersService = usersService;
         this.usersRepository = usersRepository;
+        this.securityService = securityService;
     }
 
 
@@ -76,7 +79,7 @@ public class UsersController {
     @GetMapping("/{userId}/favoriteAttractions")
     public ResponseEntity<Set<Attractions>> getAllFavoriteAttractionsByUser(@PathVariable Long userId) {
         Optional<Users> users = usersRepository.findById(userId);
-        if (users.isPresent()) {
+        if (users.isPresent() && securityService.checkAccessById(userId) ) {
             Set<Attractions> favoriteAttractions = users.orElseThrow().getFavoriteAttractions();
             return ResponseEntity.ok(favoriteAttractions);
         }
