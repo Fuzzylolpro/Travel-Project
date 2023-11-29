@@ -36,7 +36,7 @@ public class CommentsController {
         return new ResponseEntity<>(commentsList, HttpStatus.OK);
     }
 
-    @GetMapping("/attractions/{id}")
+    @GetMapping("/{id}")
     public ResponseEntity<Comments> getCommentsId(@PathVariable("id") Long id) {
         Optional<Comments> comments = commentsService.getCommentsId(id);
         if (comments.isPresent()) {
@@ -45,7 +45,7 @@ public class CommentsController {
         return new ResponseEntity<>(HttpStatus.CONFLICT);
     }
 
-    @PostMapping("")
+    @PostMapping()
     public ResponseEntity<Comments> createComment(@RequestParam("text") String text,
                                                   @RequestParam("userId") Long userId,
                                                   @RequestParam("attractionId") Long attractionId) {
