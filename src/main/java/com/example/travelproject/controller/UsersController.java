@@ -75,6 +75,11 @@ public class UsersController {
         usersService.addFavoriteAttractions(userId, attractionsId);
         return new ResponseEntity<>(HttpStatus.CREATED);
     }
+    @DeleteMapping ("/deleteFavoriteAttractions")
+    public ResponseEntity<HttpStatus> deleteFavoriteAttractions(@RequestParam Long userId, @RequestParam Long attractionsId) {
+        usersService.deleteFavoriteAttractions(userId, attractionsId);
+        return new ResponseEntity<>(HttpStatus.CREATED);
+    }
 
     @GetMapping("/{userId}/favoriteAttractions")
     public ResponseEntity<Set<Attractions>> getAllFavoriteAttractionsByUser(@PathVariable Long userId) {

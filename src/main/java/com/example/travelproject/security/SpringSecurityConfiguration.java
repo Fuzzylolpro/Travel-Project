@@ -41,11 +41,28 @@ public class SpringSecurityConfiguration {
                 .csrf(AbstractHttpConfigurer::disable) // отключаем csrf
                 .authorizeHttpRequests(auth ->
                         auth
+                                .requestMatchers(new AntPathRequestMatcher("/users/{id}", "GET")).hasRole("ADMIN")
                                 .requestMatchers(new AntPathRequestMatcher("/users", "GET")).hasRole("ADMIN")
+                                .requestMatchers(new AntPathRequestMatcher("/users", "PUT")).hasAnyRole("USER","ADMIN")
+                                .requestMatchers(new AntPathRequestMatcher("/users", "POST")).hasRole("ADMIN")
+                                .requestMatchers(new AntPathRequestMatcher("/users/addFavoriteAttractions", "POST")).hasAnyRole("USER","ADMIN")
+                                .requestMatchers(new AntPathRequestMatcher("/users/addFavoriteAttractions", "GET")).hasAnyRole("USER","ADMIN")
+                                .requestMatchers(new AntPathRequestMatcher("/users/{id}", "DELETE")).hasAnyRole("USER","ADMIN")
+                                .requestMatchers(new AntPathRequestMatcher("/{userId}/favoriteAttractions", "GET")).hasAnyRole("USER","ADMIN")
+                                .requestMatchers(new AntPathRequestMatcher("/deleteFavoriteAttractions", "DELETE")).hasAnyRole("USER","ADMIN")
+                                .requestMatchers(new AntPathRequestMatcher("/addFavoriteAttractions", "POST")).hasAnyRole("USER","ADMIN")
                                 /*.requestMatchers(HttpMethod.DELETE, "/security/**").hasRole("ADMIN")
                                 .requestMatchers("/registration").permitAll()*/
                                 .requestMatchers(new AntPathRequestMatcher("/security/registration", "POST")).permitAll()
                                 .requestMatchers(new AntPathRequestMatcher("/security", "POST")).permitAll()
+
+                                .requestMatchers(new AntPathRequestMatcher("/comments/**", "POST")).hasRole("USER")
+                                .requestMatchers(new AntPathRequestMatcher("/comments/**", "GET")).hasRole("ADMIN")
+                                .requestMatchers(new AntPathRequestMatcher("/comments/**", "PUT")).hasRole("ADMIN")
+                                .requestMatchers(new AntPathRequestMatcher("/comments/**", "DELETE")).hasRole("USER")
+                                .requestMatchers(new AntPathRequestMatcher("/comments/**", "DELETE")).hasRole("ADMIN")
+                                .requestMatchers(new AntPathRequestMatcher("/attractions/**", "GET")).permitAll()
+
                                 .anyRequest().authenticated()
                 )
                 .sessionManagement(session -> session.sessionCreationPolicy(SessionCreationPolicy.STATELESS))//отключить сессии

@@ -26,6 +26,7 @@ public class Comments {
     @Column(name = "text")
     private String text;
     @ManyToOne
+    @JoinColumn(name = "users_id")
     private Users users;
     @JsonBackReference
     @ManyToOne(fetch = FetchType.EAGER)

@@ -62,8 +62,11 @@ public class UsersService {
 
     public Boolean updateUsers(Users users) {
         try {
-            usersRepository.saveAndFlush(users);
-            log.info(String.format("users update id: " + users.getId()));
+            Long userId = users.getId();
+            if (securityService.checkAccessById(userId)){
+                usersRepository.saveAndFlush(users);
+                log.info(String.format("users update id: " + users.getId()));
+            }
         } catch (Exception e) {
             log.warn(String.format("error ", users.getId(), e));
             return false;
@@ -84,6 +87,29 @@ public class UsersService {
             log.info(String.format("users " + userId + "add favorite attractions " + attractionsId));
         } catch (Exception e) {
             log.warn(String.format("Error", userId, e));
+        }
+    }
+    public void deleteFavoriteAttractions(Long userId, Long attractionsId) {
+        try {
+            Optional<Users> userOptional = usersRepository.findById(userId);
+            Optional<Attractions> attractionsOptional = attractionRepository.findById(attractionsId);
+
+            if (userOptional.isPresent() && attractionsOptional.isPresent() && securityService.checkAccessById(userId)) {
+                Users user = userOptional.get();
+                Attractions attractions = attractionsOptional.get();
+
+                if (user.getFavoriteAttractions().contains(attractions)) {
+                    user.getFavoriteAttractions().remove(attractions);
+                    usersRepository.save(user);
+                    log.info(String.format("User " + userId + "has removed favorite attraction " + attractionsId));
+                } else {
+                    log.warn(String.format("User " + userId + "does not have attraction " + attractionsId + " as a favorite"));
+                }
+            } else {
+                log.warn(String.format("User " + userId + " or attraction " + attractionsId + " not found"));
+            }
+        } catch (Exception e) {
+            log.error(String.format("Error deleting favorite attraction for user " + userId, e));
         }
     }
 }

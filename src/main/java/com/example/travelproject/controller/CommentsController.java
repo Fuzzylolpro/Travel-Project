@@ -2,8 +2,7 @@ package com.example.travelproject.controller;
 
 import com.example.travelproject.domain.Attractions;
 import com.example.travelproject.domain.Comments;
-import com.example.travelproject.repository.AttractionRepository;
-import com.example.travelproject.repository.CommentRepository;
+import com.example.travelproject.domain.Users;
 import com.example.travelproject.service.CommentsService;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.http.HttpStatus;
@@ -15,6 +14,7 @@ import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.PutMapping;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.RestController;
 
 import java.util.List;
@@ -25,15 +25,10 @@ import java.util.Optional;
 @RequestMapping("/comments")
 public class CommentsController {
     private final CommentsService commentsService;
-    private final AttractionRepository attractionRepository;
-    private final CommentRepository commentRepository;
 
-    public CommentsController(CommentsService commentsService, AttractionRepository attractionRepository, CommentRepository commentRepository) {
+    public CommentsController(CommentsService commentsService) {
         this.commentsService = commentsService;
-        this.attractionRepository = attractionRepository;
-        this.commentRepository = commentRepository;
     }
-
 
     @GetMapping
     public ResponseEntity<List<Comments>> getAll() {
@@ -41,7 +36,7 @@ public class CommentsController {
         return new ResponseEntity<>(commentsList, HttpStatus.OK);
     }
 
-    @GetMapping("attractions/{id}")
+    @GetMapping("/attractions/{id}")
     public ResponseEntity<Comments> getCommentsId(@PathVariable("id") Long id) {
         Optional<Comments> comments = commentsService.getCommentsId(id);
         if (comments.isPresent()) {
@@ -50,21 +45,21 @@ public class CommentsController {
         return new ResponseEntity<>(HttpStatus.CONFLICT);
     }
 
-    //@PostMapping
-    //public ResponseEntity<HttpStatus> create(@RequestBody Comments comments) {
-    //    return new ResponseEntity<>(commentsService.createComments(comments) ? HttpStatus.CREATED : HttpStatus.CONFLICT);
-    //}
-    @PostMapping("/attractions/{id}")
-    public Comments addComment(@PathVariable Long id, @RequestBody Comments comments) {
-        Attractions attractions = attractionRepository.findById(id).orElseThrow(
-                () -> new RuntimeException("Attractions not found with id: " + id));
-        comments.setAttractions(attractions);
-        return commentRepository.save(comments);
+    @PostMapping("")
+    public ResponseEntity<Comments> createComment(@RequestParam("text") String text,
+                                                  @RequestParam("userId") Long userId,
+                                                  @RequestParam("attractionId") Long attractionId) {
+        Users users = new Users();
+        users.setId(userId);
+        Attractions attraction = new Attractions();
+        attraction.setId(attractionId);
+        Comments comment = commentsService.addComments(text, users, attraction);
+        return new ResponseEntity<>(comment, HttpStatus.CREATED);
     }
 
     @DeleteMapping("/{id}")
-    public ResponseEntity<HttpStatus> delete(@PathVariable("id") Long id) {
-        commentsService.deleteCommentsById(id);
+    public ResponseEntity<HttpStatus> delete(@PathVariable("id") Long id, @RequestParam Long userId) {
+        commentsService.deleteCommentsById(id, userId);
         return new ResponseEntity<>(HttpStatus.NO_CONTENT);
     }
 
@@ -72,7 +67,5 @@ public class CommentsController {
     public ResponseEntity<HttpStatus> update(@RequestBody Comments comments) {
         return new ResponseEntity<>(commentsService.updateComments(comments) ? HttpStatus.NO_CONTENT : HttpStatus.CONFLICT);
     }
-
-
 }
 
