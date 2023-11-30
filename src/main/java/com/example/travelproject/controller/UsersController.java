@@ -5,6 +5,8 @@ import com.example.travelproject.domain.Users;
 import com.example.travelproject.repository.UsersRepository;
 import com.example.travelproject.security.service.SecurityService;
 import com.example.travelproject.service.UsersService;
+import io.swagger.v3.oas.annotations.Operation;
+import io.swagger.v3.oas.annotations.security.SecurityRequirement;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
@@ -24,10 +26,9 @@ import java.util.Set;
 
 @RestController
 @Slf4j
+@SecurityRequirement(name = "Bearer Authentication")
 @RequestMapping("/users")
 public class UsersController {
-
-
     private final UsersService usersService;
     private final UsersRepository usersRepository;
     private final SecurityService securityService;
@@ -71,20 +72,29 @@ public class UsersController {
     }
 
     @PostMapping("/addFavoriteAttractions")
-    public ResponseEntity<HttpStatus> addFavoriteAttractions(@RequestParam Long userId, @RequestParam Long attractionsId) {
-        usersService.addFavoriteAttractions(userId, attractionsId);
-        return new ResponseEntity<>(HttpStatus.CREATED);
+    public ResponseEntity<String> addFavoriteAttractions(@RequestParam Long userId, @RequestParam Long attractionsId) {
+        boolean isAdded = usersService.addFavoriteAttractions(userId, attractionsId);
+        if (isAdded) {
+            return ResponseEntity.ok("Attractions added to favorites");
+        } else {
+            return ResponseEntity.badRequest().body("Error adding attractions to favorites");
+        }
     }
-    @DeleteMapping ("/deleteFavoriteAttractions")
-    public ResponseEntity<HttpStatus> deleteFavoriteAttractions(@RequestParam Long userId, @RequestParam Long attractionsId) {
-        usersService.deleteFavoriteAttractions(userId, attractionsId);
-        return new ResponseEntity<>(HttpStatus.CREATED);
+
+    @DeleteMapping("/deleteFavoriteAttractions")
+    public ResponseEntity<String> deleteFavoriteAttractions(@RequestParam Long userId, @RequestParam Long attractionsId) {
+        boolean isDeleted = usersService.deleteFavoriteAttractions(userId, attractionsId);
+        if (isDeleted) {
+            return ResponseEntity.ok("Attractions deleted to favorites");
+        } else {
+            return ResponseEntity.badRequest().body("Error deleted attractions to favorites");
+        }
     }
 
     @GetMapping("/{userId}/favoriteAttractions")
     public ResponseEntity<Set<Attractions>> getAllFavoriteAttractionsByUser(@PathVariable Long userId) {
         Optional<Users> users = usersRepository.findById(userId);
-        if (users.isPresent() && securityService.checkAccessById(userId) ) {
+        if (users.isPresent() && securityService.checkAccessById(userId)) {
             Set<Attractions> favoriteAttractions = users.orElseThrow().getFavoriteAttractions();
             return ResponseEntity.ok(favoriteAttractions);
         }

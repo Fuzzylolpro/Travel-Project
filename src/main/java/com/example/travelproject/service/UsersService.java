@@ -55,7 +55,7 @@ public class UsersService {
                 usersRepository.deleteById(id);
                 log.info(String.format("users delete id: " + id));
             }
-        }catch (Exception e){
+        } catch (Exception e) {
             log.warn(String.format("error ", id, e));
         }
     }
@@ -63,7 +63,7 @@ public class UsersService {
     public Boolean updateUsers(Users users) {
         try {
             Long userId = users.getId();
-            if (securityService.checkAccessById(userId)){
+            if (securityService.checkAccessById(userId)) {
                 usersRepository.saveAndFlush(users);
                 log.info(String.format("users update id: " + users.getId()));
             }
@@ -74,7 +74,7 @@ public class UsersService {
         return true;
     }
 
-    public void addFavoriteAttractions(Long userId, Long attractionsId) {
+    public boolean addFavoriteAttractions(Long userId, Long attractionsId) {
         try {
             Optional<Users> userOptional = usersRepository.findById(userId);
             Optional<Attractions> attractionsOptional = attractionRepository.findById(attractionsId);
@@ -83,13 +83,28 @@ public class UsersService {
                 Attractions attractions = attractionsOptional.get();
                 user.getFavoriteAttractions().add(attractions);
                 usersRepository.save(user);
+                log.info(String.format("users " + userId + " add favorite attractions " + attractionsId));
+            } else {
+                if (userOptional.isEmpty()) {
+                    log.warn(String.format("Пользователь с id " + userId + " не найден"));
+                    return false;
+                }
+                if (attractionsOptional.isEmpty()) {
+                    log.warn(String.format("Достопримечательность с id " + attractionsId + " не найдена"));
+                    return false;
+                }
+                log.warn(String.format("Ошибка при добавлении достопримечательности в избранное для пользователя " + userId));
+                return false;
             }
-            log.info(String.format("users " + userId + "add favorite attractions " + attractionsId));
         } catch (Exception e) {
             log.warn(String.format("Error", userId, e));
+            return false;
         }
+        return true;
     }
-    public void deleteFavoriteAttractions(Long userId, Long attractionsId) {
+
+
+    public boolean deleteFavoriteAttractions(Long userId, Long attractionsId) {
         try {
             Optional<Users> userOptional = usersRepository.findById(userId);
             Optional<Attractions> attractionsOptional = attractionRepository.findById(attractionsId);
@@ -104,13 +119,17 @@ public class UsersService {
                     log.info(String.format("User " + userId + "has removed favorite attraction " + attractionsId));
                 } else {
                     log.warn(String.format("User " + userId + "does not have attraction " + attractionsId + " as a favorite"));
+                    return false;
                 }
             } else {
                 log.warn(String.format("User " + userId + " or attraction " + attractionsId + " not found"));
+            return false;
             }
         } catch (Exception e) {
             log.error(String.format("Error deleting favorite attraction for user " + userId, e));
+            return false;
         }
+        return true;
     }
 }
 

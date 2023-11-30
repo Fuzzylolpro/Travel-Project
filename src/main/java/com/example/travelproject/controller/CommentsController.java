@@ -2,8 +2,10 @@ package com.example.travelproject.controller;
 
 import com.example.travelproject.domain.Attractions;
 import com.example.travelproject.domain.Comments;
+import com.example.travelproject.domain.DTO.UserDTO;
 import com.example.travelproject.domain.Users;
 import com.example.travelproject.service.CommentsService;
+import io.swagger.v3.oas.annotations.security.SecurityRequirement;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
@@ -22,6 +24,7 @@ import java.util.Optional;
 
 @RestController
 @Slf4j
+@SecurityRequirement(name = "Bearer Authentication")
 @RequestMapping("/comments")
 public class CommentsController {
     private final CommentsService commentsService;
@@ -45,12 +48,13 @@ public class CommentsController {
         return new ResponseEntity<>(HttpStatus.CONFLICT);
     }
 
+    //try DTO
     @PostMapping()
     public ResponseEntity<Comments> createComment(@RequestParam("text") String text,
-                                                  @RequestParam("userId") Long userId,
+                                                  @RequestBody UserDTO userDTO,
                                                   @RequestParam("attractionId") Long attractionId) {
         Users users = new Users();
-        users.setId(userId);
+        users.setId(userDTO.getId());
         Attractions attraction = new Attractions();
         attraction.setId(attractionId);
         Comments comment = commentsService.addComments(text, users, attraction);
@@ -58,10 +62,14 @@ public class CommentsController {
     }
 
     @DeleteMapping("/{id}")
-    public ResponseEntity<HttpStatus> delete(@PathVariable("id") Long id, @RequestParam Long userId) {
-        commentsService.deleteCommentsById(id, userId);
-        return new ResponseEntity<>(HttpStatus.NO_CONTENT);
+    public ResponseEntity<String> deleteCommentById(@PathVariable Long id, @RequestParam Long userId) {
+        if (commentsService.deleteCommentsById(id, userId)) {
+            return ResponseEntity.ok("Comment deleted successfully");
+        } else {
+            return ResponseEntity.status(HttpStatus.FORBIDDEN).body("Error deleting comment");
+        }
     }
+
 
     @PutMapping
     public ResponseEntity<HttpStatus> update(@RequestBody Comments comments) {

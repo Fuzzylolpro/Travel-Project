@@ -35,13 +35,14 @@ public class SpringSecurityConfiguration {
                 .requestMatchers(new AntPathRequestMatcher("/swagger-ui/**"));
     }
 
+
     @Bean
     public SecurityFilterChain filterChain(HttpSecurity httpSecurity) throws Exception {
         return httpSecurity
                 .csrf(AbstractHttpConfigurer::disable) // отключаем csrf
                 .authorizeHttpRequests(auth ->
                         auth
-                                .requestMatchers(new AntPathRequestMatcher("/users/{id}", "GET")).hasRole("ADMIN")
+                                .requestMatchers(new AntPathRequestMatcher("/users/{id}", "GET")).hasAnyRole("USER","ADMIN")
                                 .requestMatchers(new AntPathRequestMatcher("/users", "GET")).hasRole("ADMIN")
                                 .requestMatchers(new AntPathRequestMatcher("/users", "PUT")).hasAnyRole("USER","ADMIN")
                                 .requestMatchers(new AntPathRequestMatcher("/users", "POST")).hasRole("ADMIN")
