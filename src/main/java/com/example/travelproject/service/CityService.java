@@ -39,6 +39,7 @@ public class CityService {
 
     public void deleteCityById(Long id) {
         cityRepository.deleteById(id);
+        log.info(String.format("city delete id: " + id));
     }
 
     public Boolean updateCity(City city) {

@@ -2,7 +2,6 @@ package com.example.travelproject.service;
 
 import com.example.travelproject.domain.Attractions;
 import com.example.travelproject.domain.Comments;
-import com.example.travelproject.domain.DTO.UserDTO;
 import com.example.travelproject.domain.Users;
 import com.example.travelproject.exception_resolver.NoAccessByIdExceptions;
 import com.example.travelproject.repository.CommentRepository;
@@ -53,7 +52,7 @@ public class CommentsService {
             Comments comments = commentRepository.getReferenceById(id);
             if (securityService.checkAccessById(userId) && Objects.equals(comments.getUsers().getId(), userId)) {
                 commentRepository.deleteById(id);
-                log.info(String.format("comments delete id: " + comments.getId() + "User id: " + userId));
+                log.info(String.format("comments delete id: " + id + " User id: " + userId));
             } else {
                 log.warn(String.format("Пользователь с id " + userId + " не имеет доступа для удаления комментария с id " + id));
                 return false;
@@ -63,6 +62,9 @@ public class CommentsService {
             return false;
         }
         return true;
+    }
+    public void deleteCommentsByIdAdmin(Long id){
+        commentRepository.deleteById(id);
     }
 
 

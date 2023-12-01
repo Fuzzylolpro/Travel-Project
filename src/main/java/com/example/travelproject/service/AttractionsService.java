@@ -21,28 +21,33 @@ public class AttractionsService {
     public List<Attractions> getAll() {
         return attractionRepository.findAll();
     }
+
     public Optional<Attractions> getAttractionsId(long id) {
         return attractionRepository.findById(id);
     }
+
     public Boolean createAttraction(Attractions attractions) {
         try {
             attractionRepository.save(attractions);
-            log.info(String.format("attraction created "+attractions.getAttractionsName()));
-        }catch (Exception e){
-            log.warn(String.format("error",attractions.getAttractionsName()));
+            log.info(String.format("attraction created " + attractions.getAttractionsName()));
+        } catch (Exception e) {
+            log.warn(String.format("error", attractions.getAttractionsName()));
             return false;
         }
         return true;
     }
-    public void deleteAttractionsById(Long id){
+
+    public void deleteAttractionsById(Long id) {
         attractionRepository.deleteById(id);
+        log.info(String.format("attraction delete id: " + id));
     }
+
     public Boolean updateAttractions(Attractions attractions) {
         try {
             attractionRepository.saveAndFlush(attractions);
-            log.info(String.format("attraction update id: "+attractions.getId()));
-        }catch (Exception e){
-            log.warn(String.format("error",attractions.getId(),e));
+            log.info(String.format("attraction update id: " + attractions.getId()));
+        } catch (Exception e) {
+            log.warn(String.format("error", attractions.getId(), e));
             return false;
         }
         return true;
