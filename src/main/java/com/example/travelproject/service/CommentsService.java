@@ -9,6 +9,7 @@ import com.example.travelproject.security.service.SecurityService;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.stereotype.Service;
 
+import java.util.Collections;
 import java.util.List;
 import java.util.Objects;
 import java.util.Optional;
@@ -21,7 +22,6 @@ public class CommentsService {
 
     public CommentsService(CommentRepository commentRepository, SecurityService securityService) {
         this.commentRepository = commentRepository;
-
         this.securityService = securityService;
     }
 
@@ -63,10 +63,6 @@ public class CommentsService {
         }
         return true;
     }
-    public void deleteCommentsByIdAdmin(Long id){
-        commentRepository.deleteById(id);
-    }
-
 
     public Boolean updateComments(Comments comments) {
         try {
@@ -77,5 +73,9 @@ public class CommentsService {
             return false;
         }
         return true;
+    }
+
+    public List<Comments> getCommentsByUserId(Long userId) {
+        return commentRepository.findAllByUsers_Id(userId);
     }
 }
