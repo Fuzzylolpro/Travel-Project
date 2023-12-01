@@ -974,3 +974,172 @@ This generated password is for development use only. Your security configuration
 01-12-2023 14:58:17.289 [main] INFO  o.s.t.w.s.TestDispatcherServlet.initServletBean - Initializing Servlet ''
 01-12-2023 14:58:17.291 [main] INFO  o.s.t.w.s.TestDispatcherServlet.initServletBean - Completed initialization in 1 ms
 01-12-2023 14:58:17.326 [main] INFO  c.e.t.c.AttractionsControllerTest.logStarted - Started AttractionsControllerTest in 3.66 seconds (process running for 5.14)
+01-12-2023 14:59:37.232 [main] INFO  c.e.t.c.AttractionsControllerTest.logStarting - Starting AttractionsControllerTest using Java 17.0.7 with PID 14344 (started by Алексей in C:\Users\Алексей\IdeaProjects\Travel-Project)
+01-12-2023 14:59:37.235 [main] INFO  c.e.t.c.AttractionsControllerTest.logStartupProfileInfo - No active profile set, falling back to 1 default profile: "default"
+01-12-2023 14:59:39.675 [main] WARN  o.s.b.a.s.s.UserDetailsServiceAutoConfiguration.getOrDeducePassword - 
+
+Using generated security password: 620fd8c4-eeae-46a2-80d1-61989cafc6be
+
+This generated password is for development use only. Your security configuration must be updated before running your application in production.
+
+01-12-2023 14:59:39.848 [main] INFO  o.s.s.web.DefaultSecurityFilterChain.<init> - Will secure any request with [org.springframework.security.web.session.DisableEncodeUrlFilter@517fbf62, org.springframework.security.web.context.request.async.WebAsyncManagerIntegrationFilter@65db548, org.springframework.security.web.context.SecurityContextHolderFilter@6c24f61d, org.springframework.security.web.header.HeaderWriterFilter@2830315f, org.springframework.security.web.csrf.CsrfFilter@29d2fa84, org.springframework.security.web.authentication.logout.LogoutFilter@7858d31d, org.springframework.security.web.authentication.UsernamePasswordAuthenticationFilter@6c421123, org.springframework.security.web.authentication.ui.DefaultLoginPageGeneratingFilter@5f6e2ad9, org.springframework.security.web.authentication.ui.DefaultLogoutPageGeneratingFilter@150f41b9, org.springframework.security.web.authentication.www.BasicAuthenticationFilter@59a94d0f, org.springframework.security.web.savedrequest.RequestCacheAwareFilter@14292d71, org.springframework.security.web.servletapi.SecurityContextHolderAwareRequestFilter@2729bb71, org.springframework.security.web.authentication.AnonymousAuthenticationFilter@6e364f1f, org.springframework.security.web.access.ExceptionTranslationFilter@283baa39, org.springframework.security.web.access.intercept.AuthorizationFilter@534762ed]
+01-12-2023 14:59:39.885 [main] INFO  o.s.b.t.m.w.SpringBootMockServletContext.log - Initializing Spring TestDispatcherServlet ''
+01-12-2023 14:59:39.886 [main] INFO  o.s.t.w.s.TestDispatcherServlet.initServletBean - Initializing Servlet ''
+01-12-2023 14:59:39.888 [main] INFO  o.s.t.w.s.TestDispatcherServlet.initServletBean - Completed initialization in 2 ms
+01-12-2023 14:59:39.927 [main] INFO  c.e.t.c.AttractionsControllerTest.logStarted - Started AttractionsControllerTest in 3.117 seconds (process running for 4.395)
+01-12-2023 15:08:10.551 [main] INFO  c.e.t.controller.CityControllerTest.logStarting - Starting CityControllerTest using Java 17.0.7 with PID 13504 (started by Алексей in C:\Users\Алексей\IdeaProjects\Travel-Project)
+01-12-2023 15:08:10.554 [main] INFO  c.e.t.controller.CityControllerTest.logStartupProfileInfo - No active profile set, falling back to 1 default profile: "default"
+01-12-2023 15:08:13.601 [main] WARN  o.s.b.a.s.s.UserDetailsServiceAutoConfiguration.getOrDeducePassword - 
+
+Using generated security password: 0fb41347-874d-4971-94bc-53bb56616663
+
+This generated password is for development use only. Your security configuration must be updated before running your application in production.
+
+01-12-2023 15:08:13.762 [main] INFO  o.s.s.web.DefaultSecurityFilterChain.<init> - Will secure any request with [org.springframework.security.web.session.DisableEncodeUrlFilter@782e6b40, org.springframework.security.web.context.request.async.WebAsyncManagerIntegrationFilter@3b65084e, org.springframework.security.web.context.SecurityContextHolderFilter@4540c7, org.springframework.security.web.header.HeaderWriterFilter@2f07930a, org.springframework.security.web.csrf.CsrfFilter@3d798e76, org.springframework.security.web.authentication.logout.LogoutFilter@10d98940, org.springframework.security.web.authentication.UsernamePasswordAuthenticationFilter@4d8056bf, org.springframework.security.web.authentication.ui.DefaultLoginPageGeneratingFilter@ac4e690, org.springframework.security.web.authentication.ui.DefaultLogoutPageGeneratingFilter@32d0d7eb, org.springframework.security.web.authentication.www.BasicAuthenticationFilter@61dd1c3d, org.springframework.security.web.savedrequest.RequestCacheAwareFilter@2bc0b8c8, org.springframework.security.web.servletapi.SecurityContextHolderAwareRequestFilter@4a4b288a, org.springframework.security.web.authentication.AnonymousAuthenticationFilter@cae2a97, org.springframework.security.web.access.ExceptionTranslationFilter@5464b97c, org.springframework.security.web.access.intercept.AuthorizationFilter@5a51336a]
+01-12-2023 15:08:13.803 [main] INFO  o.s.b.t.m.w.SpringBootMockServletContext.log - Initializing Spring TestDispatcherServlet ''
+01-12-2023 15:08:13.804 [main] INFO  o.s.t.w.s.TestDispatcherServlet.initServletBean - Initializing Servlet ''
+01-12-2023 15:08:13.806 [main] INFO  o.s.t.w.s.TestDispatcherServlet.initServletBean - Completed initialization in 2 ms
+01-12-2023 15:08:13.847 [main] INFO  c.e.t.controller.CityControllerTest.logStarted - Started CityControllerTest in 3.788 seconds (process running for 5.297)
+01-12-2023 15:08:40.008 [main] INFO  c.e.t.controller.CityControllerTest.logStarting - Starting CityControllerTest using Java 17.0.7 with PID 8168 (started by Алексей in C:\Users\Алексей\IdeaProjects\Travel-Project)
+01-12-2023 15:08:40.010 [main] INFO  c.e.t.controller.CityControllerTest.logStartupProfileInfo - No active profile set, falling back to 1 default profile: "default"
+01-12-2023 15:08:43.108 [main] WARN  o.s.b.a.s.s.UserDetailsServiceAutoConfiguration.getOrDeducePassword - 
+
+Using generated security password: 09744194-c765-4035-94ec-25b1e80a94f4
+
+This generated password is for development use only. Your security configuration must be updated before running your application in production.
+
+01-12-2023 15:08:43.280 [main] INFO  o.s.s.web.DefaultSecurityFilterChain.<init> - Will secure any request with [org.springframework.security.web.session.DisableEncodeUrlFilter@48b2dbc4, org.springframework.security.web.context.request.async.WebAsyncManagerIntegrationFilter@2a667f44, org.springframework.security.web.context.SecurityContextHolderFilter@59d5c537, org.springframework.security.web.header.HeaderWriterFilter@5611bba, org.springframework.security.web.csrf.CsrfFilter@1f7336b2, org.springframework.security.web.authentication.logout.LogoutFilter@14292d71, org.springframework.security.web.authentication.UsernamePasswordAuthenticationFilter@3212bfd, org.springframework.security.web.authentication.ui.DefaultLoginPageGeneratingFilter@6463da36, org.springframework.security.web.authentication.ui.DefaultLogoutPageGeneratingFilter@53ba7997, org.springframework.security.web.authentication.www.BasicAuthenticationFilter@7e50eeb9, org.springframework.security.web.savedrequest.RequestCacheAwareFilter@3355168, org.springframework.security.web.servletapi.SecurityContextHolderAwareRequestFilter@4540c7, org.springframework.security.web.authentication.AnonymousAuthenticationFilter@3f6f9cef, org.springframework.security.web.access.ExceptionTranslationFilter@23469199, org.springframework.security.web.access.intercept.AuthorizationFilter@5f6e2ad9]
+01-12-2023 15:08:43.325 [main] INFO  o.s.b.t.m.w.SpringBootMockServletContext.log - Initializing Spring TestDispatcherServlet ''
+01-12-2023 15:08:43.326 [main] INFO  o.s.t.w.s.TestDispatcherServlet.initServletBean - Initializing Servlet ''
+01-12-2023 15:08:43.328 [main] INFO  o.s.t.w.s.TestDispatcherServlet.initServletBean - Completed initialization in 1 ms
+01-12-2023 15:08:43.369 [main] INFO  c.e.t.controller.CityControllerTest.logStarted - Started CityControllerTest in 3.853 seconds (process running for 5.371)
+01-12-2023 15:10:33.603 [main] INFO  c.e.t.controller.CityControllerTest.logStarting - Starting CityControllerTest using Java 17.0.7 with PID 6432 (started by Алексей in C:\Users\Алексей\IdeaProjects\Travel-Project)
+01-12-2023 15:10:33.607 [main] INFO  c.e.t.controller.CityControllerTest.logStartupProfileInfo - No active profile set, falling back to 1 default profile: "default"
+01-12-2023 15:10:36.623 [main] WARN  o.s.b.a.s.s.UserDetailsServiceAutoConfiguration.getOrDeducePassword - 
+
+Using generated security password: ea8271f3-2513-434f-a1ac-b55216571e44
+
+This generated password is for development use only. Your security configuration must be updated before running your application in production.
+
+01-12-2023 15:10:36.798 [main] INFO  o.s.s.web.DefaultSecurityFilterChain.<init> - Will secure any request with [org.springframework.security.web.session.DisableEncodeUrlFilter@cae2a97, org.springframework.security.web.context.request.async.WebAsyncManagerIntegrationFilter@7d12429, org.springframework.security.web.context.SecurityContextHolderFilter@15f861ee, org.springframework.security.web.header.HeaderWriterFilter@4540c7, org.springframework.security.web.csrf.CsrfFilter@618f627b, org.springframework.security.web.authentication.logout.LogoutFilter@5f6e2ad9, org.springframework.security.web.authentication.UsernamePasswordAuthenticationFilter@312a738d, org.springframework.security.web.authentication.ui.DefaultLoginPageGeneratingFilter@1a7e799e, org.springframework.security.web.authentication.ui.DefaultLogoutPageGeneratingFilter@14656be5, org.springframework.security.web.authentication.www.BasicAuthenticationFilter@3b65084e, org.springframework.security.web.savedrequest.RequestCacheAwareFilter@6463da36, org.springframework.security.web.servletapi.SecurityContextHolderAwareRequestFilter@5341e71a, org.springframework.security.web.authentication.AnonymousAuthenticationFilter@20be890d, org.springframework.security.web.access.ExceptionTranslationFilter@580c17a0, org.springframework.security.web.access.intercept.AuthorizationFilter@6233c6c2]
+01-12-2023 15:10:36.836 [main] INFO  o.s.b.t.m.w.SpringBootMockServletContext.log - Initializing Spring TestDispatcherServlet ''
+01-12-2023 15:10:36.837 [main] INFO  o.s.t.w.s.TestDispatcherServlet.initServletBean - Initializing Servlet ''
+01-12-2023 15:10:36.840 [main] INFO  o.s.t.w.s.TestDispatcherServlet.initServletBean - Completed initialization in 1 ms
+01-12-2023 15:10:36.879 [main] INFO  c.e.t.controller.CityControllerTest.logStarted - Started CityControllerTest in 3.811 seconds (process running for 5.262)
+01-12-2023 15:11:20.109 [main] INFO  c.e.t.controller.CityControllerTest.logStarting - Starting CityControllerTest using Java 17.0.7 with PID 6672 (started by Алексей in C:\Users\Алексей\IdeaProjects\Travel-Project)
+01-12-2023 15:11:20.112 [main] INFO  c.e.t.controller.CityControllerTest.logStartupProfileInfo - No active profile set, falling back to 1 default profile: "default"
+01-12-2023 15:11:22.948 [main] WARN  o.s.b.a.s.s.UserDetailsServiceAutoConfiguration.getOrDeducePassword - 
+
+Using generated security password: 70603a25-0b4d-4117-b9dd-e808ae2c5862
+
+This generated password is for development use only. Your security configuration must be updated before running your application in production.
+
+01-12-2023 15:11:23.093 [main] INFO  o.s.s.web.DefaultSecurityFilterChain.<init> - Will secure any request with [org.springframework.security.web.session.DisableEncodeUrlFilter@7d12429, org.springframework.security.web.context.request.async.WebAsyncManagerIntegrationFilter@14656be5, org.springframework.security.web.context.SecurityContextHolderFilter@3f1158ee, org.springframework.security.web.header.HeaderWriterFilter@13c90c06, org.springframework.security.web.csrf.CsrfFilter@10745a02, org.springframework.security.web.authentication.logout.LogoutFilter@3212bfd, org.springframework.security.web.authentication.UsernamePasswordAuthenticationFilter@7e50eeb9, org.springframework.security.web.authentication.ui.DefaultLoginPageGeneratingFilter@37a3ec27, org.springframework.security.web.authentication.ui.DefaultLogoutPageGeneratingFilter@20be890d, org.springframework.security.web.authentication.www.BasicAuthenticationFilter@32d0d7eb, org.springframework.security.web.savedrequest.RequestCacheAwareFilter@4a4b288a, org.springframework.security.web.servletapi.SecurityContextHolderAwareRequestFilter@405d8a80, org.springframework.security.web.authentication.AnonymousAuthenticationFilter@5db9f51f, org.springframework.security.web.access.ExceptionTranslationFilter@29d2fa84, org.springframework.security.web.access.intercept.AuthorizationFilter@312a738d]
+01-12-2023 15:11:23.125 [main] INFO  o.s.b.t.m.w.SpringBootMockServletContext.log - Initializing Spring TestDispatcherServlet ''
+01-12-2023 15:11:23.125 [main] INFO  o.s.t.w.s.TestDispatcherServlet.initServletBean - Initializing Servlet ''
+01-12-2023 15:11:23.127 [main] INFO  o.s.t.w.s.TestDispatcherServlet.initServletBean - Completed initialization in 1 ms
+01-12-2023 15:11:23.165 [main] INFO  c.e.t.controller.CityControllerTest.logStarted - Started CityControllerTest in 3.553 seconds (process running for 5.047)
+01-12-2023 15:12:16.794 [main] INFO  c.e.t.controller.CityControllerTest.logStarting - Starting CityControllerTest using Java 17.0.7 with PID 244 (started by Алексей in C:\Users\Алексей\IdeaProjects\Travel-Project)
+01-12-2023 15:12:16.797 [main] INFO  c.e.t.controller.CityControllerTest.logStartupProfileInfo - No active profile set, falling back to 1 default profile: "default"
+01-12-2023 15:12:19.801 [main] WARN  o.s.b.a.s.s.UserDetailsServiceAutoConfiguration.getOrDeducePassword - 
+
+Using generated security password: dab36115-fbaa-42bb-81f7-3144b4ca1637
+
+This generated password is for development use only. Your security configuration must be updated before running your application in production.
+
+01-12-2023 15:12:19.982 [main] INFO  o.s.s.web.DefaultSecurityFilterChain.<init> - Will secure any request with [org.springframework.security.web.session.DisableEncodeUrlFilter@3f6f9cef, org.springframework.security.web.context.request.async.WebAsyncManagerIntegrationFilter@61dd1c3d, org.springframework.security.web.context.SecurityContextHolderFilter@2f07930a, org.springframework.security.web.header.HeaderWriterFilter@59d5c537, org.springframework.security.web.csrf.CsrfFilter@52433946, org.springframework.security.web.authentication.logout.LogoutFilter@7a3643e3, org.springframework.security.web.authentication.UsernamePasswordAuthenticationFilter@1d1cfe4, org.springframework.security.web.authentication.ui.DefaultLoginPageGeneratingFilter@29892a77, org.springframework.security.web.authentication.ui.DefaultLogoutPageGeneratingFilter@7858d31d, org.springframework.security.web.authentication.www.BasicAuthenticationFilter@2a667f44, org.springframework.security.web.savedrequest.RequestCacheAwareFilter@29d2fa84, org.springframework.security.web.servletapi.SecurityContextHolderAwareRequestFilter@15f861ee, org.springframework.security.web.authentication.AnonymousAuthenticationFilter@782e6b40, org.springframework.security.web.access.ExceptionTranslationFilter@5ba184fc, org.springframework.security.web.access.intercept.AuthorizationFilter@2f471037]
+01-12-2023 15:12:20.027 [main] INFO  o.s.b.t.m.w.SpringBootMockServletContext.log - Initializing Spring TestDispatcherServlet ''
+01-12-2023 15:12:20.028 [main] INFO  o.s.t.w.s.TestDispatcherServlet.initServletBean - Initializing Servlet ''
+01-12-2023 15:12:20.030 [main] INFO  o.s.t.w.s.TestDispatcherServlet.initServletBean - Completed initialization in 1 ms
+01-12-2023 15:12:20.072 [main] INFO  c.e.t.controller.CityControllerTest.logStarted - Started CityControllerTest in 3.793 seconds (process running for 5.268)
+01-12-2023 15:15:05.475 [main] INFO  c.e.t.controller.CityControllerTest.logStarting - Starting CityControllerTest using Java 17.0.7 with PID 9144 (started by Алексей in C:\Users\Алексей\IdeaProjects\Travel-Project)
+01-12-2023 15:15:05.478 [main] INFO  c.e.t.controller.CityControllerTest.logStartupProfileInfo - No active profile set, falling back to 1 default profile: "default"
+01-12-2023 15:15:08.490 [main] WARN  o.s.b.a.s.s.UserDetailsServiceAutoConfiguration.getOrDeducePassword - 
+
+Using generated security password: 350df454-7d3a-4449-8dc9-e620d5ae989e
+
+This generated password is for development use only. Your security configuration must be updated before running your application in production.
+
+01-12-2023 15:15:08.683 [main] INFO  o.s.s.web.DefaultSecurityFilterChain.<init> - Will secure any request with [org.springframework.security.web.session.DisableEncodeUrlFilter@3eec8583, org.springframework.security.web.context.request.async.WebAsyncManagerIntegrationFilter@66e1b2a, org.springframework.security.web.context.SecurityContextHolderFilter@365bfc5f, org.springframework.security.web.header.HeaderWriterFilter@405d8a80, org.springframework.security.web.csrf.CsrfFilter@5611bba, org.springframework.security.web.authentication.logout.LogoutFilter@312a738d, org.springframework.security.web.authentication.UsernamePasswordAuthenticationFilter@3b65084e, org.springframework.security.web.authentication.ui.DefaultLoginPageGeneratingFilter@48e74764, org.springframework.security.web.authentication.ui.DefaultLogoutPageGeneratingFilter@343db2f6, org.springframework.security.web.authentication.www.BasicAuthenticationFilter@2a631049, org.springframework.security.web.savedrequest.RequestCacheAwareFilter@37a3ec27, org.springframework.security.web.servletapi.SecurityContextHolderAwareRequestFilter@da22aa, org.springframework.security.web.authentication.AnonymousAuthenticationFilter@2c815fdc, org.springframework.security.web.access.ExceptionTranslationFilter@29892a77, org.springframework.security.web.access.intercept.AuthorizationFilter@782e6b40]
+01-12-2023 15:15:08.732 [main] INFO  o.s.b.t.m.w.SpringBootMockServletContext.log - Initializing Spring TestDispatcherServlet ''
+01-12-2023 15:15:08.733 [main] INFO  o.s.t.w.s.TestDispatcherServlet.initServletBean - Initializing Servlet ''
+01-12-2023 15:15:08.736 [main] INFO  o.s.t.w.s.TestDispatcherServlet.initServletBean - Completed initialization in 2 ms
+01-12-2023 15:15:08.785 [main] INFO  c.e.t.controller.CityControllerTest.logStarted - Started CityControllerTest in 3.809 seconds (process running for 5.299)
+01-12-2023 15:17:37.492 [main] INFO  c.e.t.controller.CityControllerTest.logStarting - Starting CityControllerTest using Java 17.0.7 with PID 13568 (started by Алексей in C:\Users\Алексей\IdeaProjects\Travel-Project)
+01-12-2023 15:17:37.496 [main] INFO  c.e.t.controller.CityControllerTest.logStartupProfileInfo - No active profile set, falling back to 1 default profile: "default"
+01-12-2023 15:17:40.579 [main] WARN  o.s.b.a.s.s.UserDetailsServiceAutoConfiguration.getOrDeducePassword - 
+
+Using generated security password: f8b65cb1-9a9c-4644-a7fe-aa76a985d349
+
+This generated password is for development use only. Your security configuration must be updated before running your application in production.
+
+01-12-2023 15:17:40.788 [main] INFO  o.s.s.web.DefaultSecurityFilterChain.<init> - Will secure any request with [org.springframework.security.web.session.DisableEncodeUrlFilter@66e1b2a, org.springframework.security.web.context.request.async.WebAsyncManagerIntegrationFilter@343db2f6, org.springframework.security.web.context.SecurityContextHolderFilter@1a7e799e, org.springframework.security.web.header.HeaderWriterFilter@ac4e690, org.springframework.security.web.csrf.CsrfFilter@5ba184fc, org.springframework.security.web.authentication.logout.LogoutFilter@7e50eeb9, org.springframework.security.web.authentication.UsernamePasswordAuthenticationFilter@32d0d7eb, org.springframework.security.web.authentication.ui.DefaultLoginPageGeneratingFilter@338d47b, org.springframework.security.web.authentication.ui.DefaultLogoutPageGeneratingFilter@2c815fdc, org.springframework.security.web.authentication.www.BasicAuthenticationFilter@425b5fe2, org.springframework.security.web.savedrequest.RequestCacheAwareFilter@283baa39, org.springframework.security.web.servletapi.SecurityContextHolderAwareRequestFilter@75452aea, org.springframework.security.web.authentication.AnonymousAuthenticationFilter@769b0752, org.springframework.security.web.access.ExceptionTranslationFilter@5341e71a, org.springframework.security.web.access.intercept.AuthorizationFilter@3b65084e]
+01-12-2023 15:17:40.840 [main] INFO  o.s.b.t.m.w.SpringBootMockServletContext.log - Initializing Spring TestDispatcherServlet ''
+01-12-2023 15:17:40.841 [main] INFO  o.s.t.w.s.TestDispatcherServlet.initServletBean - Initializing Servlet ''
+01-12-2023 15:17:40.843 [main] INFO  o.s.t.w.s.TestDispatcherServlet.initServletBean - Completed initialization in 2 ms
+01-12-2023 15:17:40.881 [main] INFO  c.e.t.controller.CityControllerTest.logStarted - Started CityControllerTest in 3.897 seconds (process running for 5.384)
+01-12-2023 15:25:03.087 [main] INFO  c.e.t.controller.CityControllerTest.logStarting - Starting CityControllerTest using Java 17.0.7 with PID 9188 (started by Алексей in C:\Users\Алексей\IdeaProjects\Travel-Project)
+01-12-2023 15:25:03.091 [main] INFO  c.e.t.controller.CityControllerTest.logStartupProfileInfo - No active profile set, falling back to 1 default profile: "default"
+01-12-2023 15:25:06.037 [main] WARN  o.s.b.a.s.s.UserDetailsServiceAutoConfiguration.getOrDeducePassword - 
+
+Using generated security password: 4cb54530-3dc7-49c6-ac21-361ce80e470f
+
+This generated password is for development use only. Your security configuration must be updated before running your application in production.
+
+01-12-2023 15:25:06.207 [main] INFO  o.s.s.web.DefaultSecurityFilterChain.<init> - Will secure any request with [org.springframework.security.web.session.DisableEncodeUrlFilter@65db548, org.springframework.security.web.context.request.async.WebAsyncManagerIntegrationFilter@150f41b9, org.springframework.security.web.context.SecurityContextHolderFilter@4537880f, org.springframework.security.web.header.HeaderWriterFilter@da22aa, org.springframework.security.web.csrf.CsrfFilter@4540c7, org.springframework.security.web.authentication.logout.LogoutFilter@782e6b40, org.springframework.security.web.authentication.UsernamePasswordAuthenticationFilter@38e00b47, org.springframework.security.web.authentication.ui.DefaultLoginPageGeneratingFilter@3212bfd, org.springframework.security.web.authentication.ui.DefaultLogoutPageGeneratingFilter@6e364f1f, org.springframework.security.web.authentication.www.BasicAuthenticationFilter@7ff09659, org.springframework.security.web.savedrequest.RequestCacheAwareFilter@48e74764, org.springframework.security.web.servletapi.SecurityContextHolderAwareRequestFilter@55071497, org.springframework.security.web.authentication.AnonymousAuthenticationFilter@429e7914, org.springframework.security.web.access.ExceptionTranslationFilter@416b1265, org.springframework.security.web.access.intercept.AuthorizationFilter@6c421123]
+01-12-2023 15:25:06.244 [main] INFO  o.s.b.t.m.w.SpringBootMockServletContext.log - Initializing Spring TestDispatcherServlet ''
+01-12-2023 15:25:06.245 [main] INFO  o.s.t.w.s.TestDispatcherServlet.initServletBean - Initializing Servlet ''
+01-12-2023 15:25:06.247 [main] INFO  o.s.t.w.s.TestDispatcherServlet.initServletBean - Completed initialization in 1 ms
+01-12-2023 15:25:06.289 [main] INFO  c.e.t.controller.CityControllerTest.logStarted - Started CityControllerTest in 3.7 seconds (process running for 5.181)
+01-12-2023 15:53:42.918 [main] INFO  c.e.t.controller.CityControllerTest.logStarting - Starting CityControllerTest using Java 17.0.7 with PID 5244 (started by Алексей in C:\Users\Алексей\IdeaProjects\Travel-Project)
+01-12-2023 15:53:42.918 [main] INFO  c.e.t.controller.CityControllerTest.logStartupProfileInfo - No active profile set, falling back to 1 default profile: "default"
+01-12-2023 15:53:45.893 [main] WARN  o.s.b.a.s.s.UserDetailsServiceAutoConfiguration.getOrDeducePassword - 
+
+Using generated security password: 8dbd78b2-c0ba-491f-96bb-2dd96aefbfc4
+
+This generated password is for development use only. Your security configuration must be updated before running your application in production.
+
+01-12-2023 15:53:46.088 [main] INFO  o.s.s.web.DefaultSecurityFilterChain.<init> - Will secure any request with [org.springframework.security.web.session.DisableEncodeUrlFilter@3eec8583, org.springframework.security.web.context.request.async.WebAsyncManagerIntegrationFilter@66e1b2a, org.springframework.security.web.context.SecurityContextHolderFilter@365bfc5f, org.springframework.security.web.header.HeaderWriterFilter@405d8a80, org.springframework.security.web.csrf.CsrfFilter@5611bba, org.springframework.security.web.authentication.logout.LogoutFilter@312a738d, org.springframework.security.web.authentication.UsernamePasswordAuthenticationFilter@3b65084e, org.springframework.security.web.authentication.ui.DefaultLoginPageGeneratingFilter@48e74764, org.springframework.security.web.authentication.ui.DefaultLogoutPageGeneratingFilter@343db2f6, org.springframework.security.web.authentication.www.BasicAuthenticationFilter@2a631049, org.springframework.security.web.savedrequest.RequestCacheAwareFilter@37a3ec27, org.springframework.security.web.servletapi.SecurityContextHolderAwareRequestFilter@da22aa, org.springframework.security.web.authentication.AnonymousAuthenticationFilter@2c815fdc, org.springframework.security.web.access.ExceptionTranslationFilter@29892a77, org.springframework.security.web.access.intercept.AuthorizationFilter@782e6b40]
+01-12-2023 15:53:46.135 [main] INFO  o.s.b.t.m.w.SpringBootMockServletContext.log - Initializing Spring TestDispatcherServlet ''
+01-12-2023 15:53:46.135 [main] INFO  o.s.t.w.s.TestDispatcherServlet.initServletBean - Initializing Servlet ''
+01-12-2023 15:53:46.135 [main] INFO  o.s.t.w.s.TestDispatcherServlet.initServletBean - Completed initialization in 0 ms
+01-12-2023 15:53:46.198 [main] INFO  c.e.t.controller.CityControllerTest.logStarted - Started CityControllerTest in 3.76 seconds (process running for 5.351)
+01-12-2023 15:54:33.245 [main] INFO  c.e.t.controller.CityControllerTest.logStarting - Starting CityControllerTest using Java 17.0.7 with PID 4364 (started by Алексей in C:\Users\Алексей\IdeaProjects\Travel-Project)
+01-12-2023 15:54:33.245 [main] INFO  c.e.t.controller.CityControllerTest.logStartupProfileInfo - No active profile set, falling back to 1 default profile: "default"
+01-12-2023 15:54:36.189 [main] WARN  o.s.b.a.s.s.UserDetailsServiceAutoConfiguration.getOrDeducePassword - 
+
+Using generated security password: bbb43018-536d-44e2-9c34-d5a0cca535db
+
+This generated password is for development use only. Your security configuration must be updated before running your application in production.
+
+01-12-2023 15:54:36.408 [main] INFO  o.s.s.web.DefaultSecurityFilterChain.<init> - Will secure any request with [org.springframework.security.web.session.DisableEncodeUrlFilter@53ba7997, org.springframework.security.web.context.request.async.WebAsyncManagerIntegrationFilter@3f6f9cef, org.springframework.security.web.context.SecurityContextHolderFilter@3355168, org.springframework.security.web.header.HeaderWriterFilter@4cfc0c48, org.springframework.security.web.csrf.CsrfFilter@347123dc, org.springframework.security.web.authentication.logout.LogoutFilter@338d47b, org.springframework.security.web.authentication.UsernamePasswordAuthenticationFilter@2f471037, org.springframework.security.web.authentication.ui.DefaultLoginPageGeneratingFilter@1c6ac73c, org.springframework.security.web.authentication.ui.DefaultLogoutPageGeneratingFilter@61dd1c3d, org.springframework.security.web.authentication.www.BasicAuthenticationFilter@48b2dbc4, org.springframework.security.web.savedrequest.RequestCacheAwareFilter@580c17a0, org.springframework.security.web.servletapi.SecurityContextHolderAwareRequestFilter@2bc0b8c8, org.springframework.security.web.authentication.AnonymousAuthenticationFilter@7858d31d, org.springframework.security.web.access.ExceptionTranslationFilter@5611bba, org.springframework.security.web.access.intercept.AuthorizationFilter@1cc9bd9b]
+01-12-2023 15:54:36.454 [main] INFO  o.s.b.t.m.w.SpringBootMockServletContext.log - Initializing Spring TestDispatcherServlet ''
+01-12-2023 15:54:36.454 [main] INFO  o.s.t.w.s.TestDispatcherServlet.initServletBean - Initializing Servlet ''
+01-12-2023 15:54:36.454 [main] INFO  o.s.t.w.s.TestDispatcherServlet.initServletBean - Completed initialization in 0 ms
+01-12-2023 15:54:36.505 [main] INFO  c.e.t.controller.CityControllerTest.logStarted - Started CityControllerTest in 3.773 seconds (process running for 5.258)
+01-12-2023 15:56:03.363 [main] INFO  c.e.t.controller.CityControllerTest.logStarting - Starting CityControllerTest using Java 17.0.7 with PID 10844 (started by Алексей in C:\Users\Алексей\IdeaProjects\Travel-Project)
+01-12-2023 15:56:03.363 [main] INFO  c.e.t.controller.CityControllerTest.logStartupProfileInfo - No active profile set, falling back to 1 default profile: "default"
+01-12-2023 15:56:06.375 [main] WARN  o.s.b.a.s.s.UserDetailsServiceAutoConfiguration.getOrDeducePassword - 
+
+Using generated security password: e5b7b794-ec8b-4fee-aed3-066b00a7c7cb
+
+This generated password is for development use only. Your security configuration must be updated before running your application in production.
+
+01-12-2023 15:56:06.583 [main] INFO  o.s.s.web.DefaultSecurityFilterChain.<init> - Will secure any request with [org.springframework.security.web.session.DisableEncodeUrlFilter@6c421123, org.springframework.security.web.context.request.async.WebAsyncManagerIntegrationFilter@38e00b47, org.springframework.security.web.context.SecurityContextHolderFilter@5341e71a, org.springframework.security.web.header.HeaderWriterFilter@4a4b288a, org.springframework.security.web.csrf.CsrfFilter@8af1c49, org.springframework.security.web.authentication.logout.LogoutFilter@5a51336a, org.springframework.security.web.authentication.UsernamePasswordAuthenticationFilter@3f6f9cef, org.springframework.security.web.authentication.ui.DefaultLoginPageGeneratingFilter@75452aea, org.springframework.security.web.authentication.ui.DefaultLogoutPageGeneratingFilter@2a631049, org.springframework.security.web.authentication.www.BasicAuthenticationFilter@5db9f51f, org.springframework.security.web.savedrequest.RequestCacheAwareFilter@ac4e690, org.springframework.security.web.servletapi.SecurityContextHolderAwareRequestFilter@37a3ec27, org.springframework.security.web.authentication.AnonymousAuthenticationFilter@425b5fe2, org.springframework.security.web.access.ExceptionTranslationFilter@3f1158ee, org.springframework.security.web.access.intercept.AuthorizationFilter@53ba7997]
+01-12-2023 15:56:06.630 [main] INFO  o.s.b.t.m.w.SpringBootMockServletContext.log - Initializing Spring TestDispatcherServlet ''
+01-12-2023 15:56:06.630 [main] INFO  o.s.t.w.s.TestDispatcherServlet.initServletBean - Initializing Servlet ''
+01-12-2023 15:56:06.630 [main] INFO  o.s.t.w.s.TestDispatcherServlet.initServletBean - Completed initialization in 0 ms
+01-12-2023 15:56:06.692 [main] INFO  c.e.t.controller.CityControllerTest.logStarted - Started CityControllerTest in 3.807 seconds (process running for 5.312)
+01-12-2023 15:56:19.319 [main] INFO  c.e.t.controller.CityControllerTest.logStarting - Starting CityControllerTest using Java 17.0.7 with PID 12216 (started by Алексей in C:\Users\Алексей\IdeaProjects\Travel-Project)
+01-12-2023 15:56:19.319 [main] INFO  c.e.t.controller.CityControllerTest.logStartupProfileInfo - No active profile set, falling back to 1 default profile: "default"
+01-12-2023 15:56:22.324 [main] WARN  o.s.b.a.s.s.UserDetailsServiceAutoConfiguration.getOrDeducePassword - 
+
+Using generated security password: 1e41ac3e-0fea-4975-922c-f6417fad2fd2
+
+This generated password is for development use only. Your security configuration must be updated before running your application in production.
+
+01-12-2023 15:56:22.543 [main] INFO  o.s.s.web.DefaultSecurityFilterChain.<init> - Will secure any request with [org.springframework.security.web.session.DisableEncodeUrlFilter@517fbf62, org.springframework.security.web.context.request.async.WebAsyncManagerIntegrationFilter@65db548, org.springframework.security.web.context.SecurityContextHolderFilter@6c24f61d, org.springframework.security.web.header.HeaderWriterFilter@2830315f, org.springframework.security.web.csrf.CsrfFilter@29d2fa84, org.springframework.security.web.authentication.logout.LogoutFilter@7858d31d, org.springframework.security.web.authentication.UsernamePasswordAuthenticationFilter@6c421123, org.springframework.security.web.authentication.ui.DefaultLoginPageGeneratingFilter@5f6e2ad9, org.springframework.security.web.authentication.ui.DefaultLogoutPageGeneratingFilter@150f41b9, org.springframework.security.web.authentication.www.BasicAuthenticationFilter@59a94d0f, org.springframework.security.web.savedrequest.RequestCacheAwareFilter@14292d71, org.springframework.security.web.servletapi.SecurityContextHolderAwareRequestFilter@2729bb71, org.springframework.security.web.authentication.AnonymousAuthenticationFilter@6e364f1f, org.springframework.security.web.access.ExceptionTranslationFilter@283baa39, org.springframework.security.web.access.intercept.AuthorizationFilter@534762ed]
+01-12-2023 15:56:22.590 [main] INFO  o.s.b.t.m.w.SpringBootMockServletContext.log - Initializing Spring TestDispatcherServlet ''
+01-12-2023 15:56:22.590 [main] INFO  o.s.t.w.s.TestDispatcherServlet.initServletBean - Initializing Servlet ''
+01-12-2023 15:56:22.590 [main] INFO  o.s.t.w.s.TestDispatcherServlet.initServletBean - Completed initialization in 0 ms
+01-12-2023 15:56:22.637 [main] INFO  c.e.t.controller.CityControllerTest.logStarted - Started CityControllerTest in 3.824 seconds (process running for 5.386)
