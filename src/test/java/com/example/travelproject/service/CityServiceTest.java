@@ -1,11 +1,7 @@
 package com.example.travelproject.service;
 
-import com.example.travelproject.domain.Attractions;
 import com.example.travelproject.domain.City;
-import com.example.travelproject.repository.AttractionRepository;
 import com.example.travelproject.repository.CityRepository;
-import com.example.travelproject.security.repository.SecurityCredentialsRepository;
-import com.example.travelproject.security.service.SecurityService;
 import org.junit.jupiter.api.Assertions;
 import org.junit.jupiter.api.BeforeAll;
 import org.junit.jupiter.api.Test;
@@ -30,15 +26,11 @@ public class CityServiceTest {
     @InjectMocks
     CityService cityService;
     @Mock
-    SecurityService securityService;
-    @Mock
-    SecurityCredentialsRepository credentialsRepository;
-    @Mock
     CityRepository cityRepository;
     static List<City> cityList = null;
     static City city = null;
     static Long cityId = 10L;
-    static Long usersId = 20L;
+
     @BeforeAll
     static void beforeAll() {
         cityList = new ArrayList<>();
@@ -53,6 +45,7 @@ public class CityServiceTest {
         Mockito.when(securityContextMock.getAuthentication()).thenReturn(authenticationMock);
         SecurityContextHolder.setContext(securityContextMock);
     }
+
     @Test
     void getAllTest() {
         Mockito.when(cityRepository.findAll()).thenReturn(cityList);
@@ -61,6 +54,7 @@ public class CityServiceTest {
         Mockito.verify(cityRepository, Mockito.times(1)).findAll();
         Assertions.assertNotNull(resultList);
     }
+
     @Test
     void getCityByIdTest() {
         Mockito.when(cityRepository.findById(anyLong())).thenReturn(Optional.of(city));
@@ -69,6 +63,7 @@ public class CityServiceTest {
         Mockito.verify(cityRepository, Mockito.times(1)).findById(anyLong());
         Assertions.assertNotNull(result.get());
     }
+
     @Test
     void createTest() {
         Mockito.when(cityRepository.save(any())).thenReturn(city);
@@ -77,6 +72,7 @@ public class CityServiceTest {
         Mockito.verify(cityRepository, Mockito.times(1)).save(any());
         Assertions.assertTrue(result);
     }
+
     @Test
     void updateTest() {
         Mockito.when(cityRepository.saveAndFlush(any())).thenReturn(city);
@@ -85,6 +81,7 @@ public class CityServiceTest {
         Mockito.verify(cityRepository, Mockito.times(1)).saveAndFlush(any());
         Assertions.assertTrue(result);
     }
+
     @Test
     void deleteTest() {
         cityService.deleteCityById(10L);

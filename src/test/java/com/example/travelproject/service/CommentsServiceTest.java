@@ -85,11 +85,13 @@ public class CommentsServiceTest {
         Mockito.verify(commentRepository).save(Mockito.any(Comments.class));
         assertNotNull(result);
     }
+
     @Test
     void deleteTest() {
-        commentsService.deleteCommentsById(10L,usersId);
+        commentsService.deleteCommentsById(10L, usersId);
         Mockito.verify(commentRepository, Mockito.times(1)).deleteById(anyLong());
     }
+
     @Test
     public void testDeleteCommentsById_Success() {
         Long id = 1L;

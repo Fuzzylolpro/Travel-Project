@@ -1,8 +1,6 @@
 package com.example.travelproject.service;
 
-import com.example.travelproject.domain.Country;
 import com.example.travelproject.domain.Users;
-import com.example.travelproject.repository.CountryRepository;
 import com.example.travelproject.repository.UsersRepository;
 import com.example.travelproject.security.service.SecurityService;
 import org.junit.jupiter.api.Assertions;
@@ -23,11 +21,9 @@ import java.util.Optional;
 
 import static org.junit.jupiter.api.Assertions.assertTrue;
 import static org.mockito.ArgumentMatchers.any;
-import static org.mockito.ArgumentMatchers.anyLong;
 import static org.mockito.Mockito.mock;
 import static org.mockito.Mockito.verify;
 import static org.mockito.Mockito.when;
-import static org.springframework.test.util.AssertionErrors.assertEquals;
 
 @ExtendWith(MockitoExtension.class)
 public class UsersServiceTest {
@@ -40,6 +36,7 @@ public class UsersServiceTest {
     static List<Users> usersList = null;
     static Users users = null;
     static Long usersId = 10L;
+
     @BeforeAll
     static void beforeAll() {
         usersList = new ArrayList<>();
@@ -54,6 +51,7 @@ public class UsersServiceTest {
         when(securityContextMock.getAuthentication()).thenReturn(authenticationMock);
         SecurityContextHolder.setContext(securityContextMock);
     }
+
     @Test
     void getAllTest() {
         when(usersRepository.findAll()).thenReturn(usersList);
@@ -62,6 +60,7 @@ public class UsersServiceTest {
         verify(usersRepository, Mockito.times(1)).findAll();
         Assertions.assertNotNull(resultList);
     }
+
     @Test
     void getUsersByIdTest() {
         when(securityService.checkAccessById(usersId)).thenReturn(true);
@@ -71,6 +70,7 @@ public class UsersServiceTest {
         verify(usersRepository).findById(usersId);
         assertTrue(result.isPresent());
     }
+
     @Test
     void createTest() {
         Mockito.when(usersRepository.save(any())).thenReturn(users);

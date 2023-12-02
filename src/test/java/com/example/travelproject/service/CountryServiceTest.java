@@ -1,11 +1,7 @@
 package com.example.travelproject.service;
 
-import com.example.travelproject.domain.City;
 import com.example.travelproject.domain.Country;
-import com.example.travelproject.repository.CityRepository;
 import com.example.travelproject.repository.CountryRepository;
-import com.example.travelproject.security.repository.SecurityCredentialsRepository;
-import com.example.travelproject.security.service.SecurityService;
 import org.junit.jupiter.api.Assertions;
 import org.junit.jupiter.api.BeforeAll;
 import org.junit.jupiter.api.Test;
@@ -34,6 +30,7 @@ public class CountryServiceTest {
     static List<Country> countryList = null;
     static Country country = null;
     static Long countryId = 10L;
+
     @BeforeAll
     static void beforeAll() {
         countryList = new ArrayList<>();
@@ -48,6 +45,7 @@ public class CountryServiceTest {
         Mockito.when(securityContextMock.getAuthentication()).thenReturn(authenticationMock);
         SecurityContextHolder.setContext(securityContextMock);
     }
+
     @Test
     void getAllTest() {
         Mockito.when(countryRepository.findAll()).thenReturn(countryList);
@@ -56,6 +54,7 @@ public class CountryServiceTest {
         Mockito.verify(countryRepository, Mockito.times(1)).findAll();
         Assertions.assertNotNull(resultList);
     }
+
     @Test
     void getCountryByIdTest() {
         Mockito.when(countryRepository.findById(anyLong())).thenReturn(Optional.of(country));
@@ -64,6 +63,7 @@ public class CountryServiceTest {
         Mockito.verify(countryRepository, Mockito.times(1)).findById(anyLong());
         Assertions.assertNotNull(result.get());
     }
+
     @Test
     void createTest() {
         Mockito.when(countryRepository.save(any())).thenReturn(country);
@@ -72,6 +72,7 @@ public class CountryServiceTest {
         Mockito.verify(countryRepository, Mockito.times(1)).save(any());
         Assertions.assertTrue(result);
     }
+
     @Test
     void updateTest() {
         Mockito.when(countryRepository.saveAndFlush(any())).thenReturn(country);
@@ -80,6 +81,7 @@ public class CountryServiceTest {
         Mockito.verify(countryRepository, Mockito.times(1)).saveAndFlush(any());
         Assertions.assertTrue(result);
     }
+
     @Test
     void deleteTest() {
         countryService.deleteCountryById(10L);

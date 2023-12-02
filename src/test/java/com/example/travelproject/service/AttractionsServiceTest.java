@@ -2,8 +2,6 @@ package com.example.travelproject.service;
 
 import com.example.travelproject.domain.Attractions;
 import com.example.travelproject.repository.AttractionRepository;
-import com.example.travelproject.security.repository.SecurityCredentialsRepository;
-import com.example.travelproject.security.service.SecurityService;
 import org.junit.jupiter.api.Assertions;
 import org.junit.jupiter.api.BeforeAll;
 import org.junit.jupiter.api.Test;
@@ -27,18 +25,12 @@ import static org.mockito.ArgumentMatchers.anyLong;
 public class AttractionsServiceTest {
     @InjectMocks
     AttractionsService attractionsService;
-
-    @Mock
-    SecurityService securityService;
-    @Mock
-    SecurityCredentialsRepository credentialsRepository;
-
     @Mock
     AttractionRepository attractionRepository;
     static List<Attractions> attractionsList = null;
     static Attractions attractions = null;
     static Long attractionsId = 10L;
-    static Long usersId = 20L;
+
     @BeforeAll
     static void beforeAll() {
         attractionsList = new ArrayList<>();
@@ -54,6 +46,7 @@ public class AttractionsServiceTest {
         Mockito.when(securityContextMock.getAuthentication()).thenReturn(authenticationMock);
         SecurityContextHolder.setContext(securityContextMock);
     }
+
     @Test
     void getAllTest() {
         Mockito.when(attractionRepository.findAll()).thenReturn(attractionsList);
@@ -62,6 +55,7 @@ public class AttractionsServiceTest {
         Mockito.verify(attractionRepository, Mockito.times(1)).findAll();
         Assertions.assertNotNull(resultList);
     }
+
     @Test
     void getAttractionsByIdTest() {
         Mockito.when(attractionRepository.findById(anyLong())).thenReturn(Optional.of(attractions));
@@ -70,6 +64,7 @@ public class AttractionsServiceTest {
         Mockito.verify(attractionRepository, Mockito.times(1)).findById(anyLong());
         Assertions.assertNotNull(result.get());
     }
+
     @Test
     void createTest() {
         Mockito.when(attractionRepository.save(any())).thenReturn(attractions);
@@ -78,6 +73,7 @@ public class AttractionsServiceTest {
         Mockito.verify(attractionRepository, Mockito.times(1)).save(any());
         Assertions.assertTrue(result);
     }
+
     @Test
     void updateTest() {
         Mockito.when(attractionRepository.saveAndFlush(any())).thenReturn(attractions);
@@ -86,6 +82,7 @@ public class AttractionsServiceTest {
         Mockito.verify(attractionRepository, Mockito.times(1)).saveAndFlush(any());
         Assertions.assertTrue(result);
     }
+
     @Test
     void deleteTest() {
         attractionsService.deleteAttractionsById(10L);
