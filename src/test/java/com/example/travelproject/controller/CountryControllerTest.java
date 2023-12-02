@@ -1,9 +1,7 @@
 package com.example.travelproject.controller;
 
-import com.example.travelproject.domain.City;
 import com.example.travelproject.domain.Country;
 import com.example.travelproject.security.filter.JwtAuthenticationFilter;
-import com.example.travelproject.service.CityService;
 import com.example.travelproject.service.CountryService;
 import com.fasterxml.jackson.databind.ObjectMapper;
 import org.hamcrest.Matchers;
@@ -22,6 +20,7 @@ import java.util.ArrayList;
 import java.util.List;
 import java.util.Optional;
 
+import static org.hamcrest.Matchers.hasSize;
 import static org.hamcrest.Matchers.is;
 import static org.mockito.ArgumentMatchers.any;
 import static org.mockito.BDDMockito.given;
@@ -69,7 +68,7 @@ public class CountryControllerTest {
         when(countryService.getAll()).thenReturn(countryList);
         mockMvc.perform(get("/country"))
                 .andExpect(status().isOk())
-                .andExpect(jsonPath("$", Matchers.hasSize(1)))
+                .andExpect(jsonPath("$", hasSize(1)))
                 .andExpect(jsonPath("$[0].id", Matchers.equalTo(10)));
     }
     @Test
@@ -156,4 +155,5 @@ public class CountryControllerTest {
                         .content(asJsonString(country)))
                 .andExpect(status().isNoContent());
     }
+
 }

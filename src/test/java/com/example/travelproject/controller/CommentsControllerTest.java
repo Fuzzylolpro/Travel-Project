@@ -135,6 +135,7 @@ public class CommentsControllerTest {
                 .andExpect(jsonPath("$.text", is(text)))
                 .andExpect(jsonPath("$.users.id", is(userDTO.getId().intValue())));
 
+
         verify(commentsService).addComments(text, users, attraction);
     }
 
