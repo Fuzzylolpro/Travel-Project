@@ -1,31 +1,92 @@
-create table public.country
+create sequence person_id_users;
+
+alter sequence person_id_users owner to postgres;
+
+create sequence city_id_seq;
+
+alter sequence city_id_seq owner to postgres;
+
+create sequence attractions_seq
+    increment by 50;
+
+alter sequence attractions_seq owner to postgres;
+
+create sequence cities_seq
+    increment by 50;
+
+alter sequence cities_seq owner to postgres;
+
+create sequence comments_seq
+    increment by 50;
+
+alter sequence comments_seq owner to postgres;
+
+create sequence country_seq
+    increment by 50;
+
+alter sequence country_seq owner to postgres;
+
+create sequence users_seq
+    increment by 50;
+
+alter sequence users_seq owner to postgres;
+
+create sequence attractions_id_seq;
+
+alter sequence attractions_id_seq owner to postgres;
+
+create sequence cities_id_seq;
+
+alter sequence cities_id_seq owner to postgres;
+
+create sequence comments_id_seq;
+
+alter sequence comments_id_seq owner to postgres;
+
+create sequence country_id_seq;
+
+alter sequence country_id_seq owner to postgres;
+
+create sequence users_id_seq;
+
+alter sequence users_id_seq owner to postgres;
+
+create sequence person_id_seq;
+
+alter sequence person_id_seq owner to postgres;
+
+create sequence security_id_seq;
+
+alter sequence security_id_seq owner to postgres;
+
+create table country
 (
     id           bigint default nextval('country_id_seq'::regclass) not null
         primary key,
     country_name varchar(255)                                       not null
 );
 
-alter table public.country
+alter table country
     owner to postgres;
 
-create table public.cities
+create table cities
 (
     country_name_id bigint
         constraint fkeskbfpc130i7t4xakwrjghswf
-            references public.country,
+            references country,
     id              bigint default nextval('cities_id_seq'::regclass) not null
         primary key,
     cities_name     varchar(255)                                      not null
 );
 
-alter table public.cities
+alter table cities
     owner to postgres;
 
-create table public.attractions
+create table attractions
 (
     city_name_id     bigint
         constraint fkkq9ql9geqfxxd9ex4mwyplwtf
-            references public.cities
+            references cities
             on update cascade on delete cascade,
     id               bigint default nextval('attractions_id_seq'::regclass) not null
         primary key,
@@ -33,10 +94,10 @@ create table public.attractions
     attraction_info  text
 );
 
-alter table public.attractions
+alter table attractions
     owner to postgres;
 
-create table public.users
+create table users
 (
     age         integer
         constraint users_age_check
@@ -49,45 +110,45 @@ create table public.users
     second_name varchar(255)
 );
 
-alter table public.users
+alter table users
     owner to postgres;
 
-create table public.comments
+create table comments
 (
     id             bigint default nextval('comments_id_seq'::regclass) not null
         primary key,
     users_id       bigint
         constraint fkt55y2infwbbw3o942o2mhm0v4
-            references public.users,
+            references users,
     text           varchar(255)                                        not null,
     attractions_id bigint
         constraint fkd5pr6yxoxb0bdhi8b9sxfkufy
-            references public.attractions
+            references attractions
             on update cascade on delete cascade
 );
 
-alter table public.comments
+alter table comments
     owner to postgres;
 
-create table public.l_user_attraction
+create table l_user_attraction
 (
     id             bigint default nextval('cities_id_seq'::regclass) not null
         constraint l_user_attraction_pk
             primary key,
     user_id        bigint
         constraint l_user_attraction_users_id_fk
-            references public.users
+            references users
             on update cascade on delete cascade,
     attractions_id bigint
         constraint l_user_attraction_attractions_id_fk
-            references public.attractions
+            references attractions
             on update cascade on delete cascade
 );
 
-alter table public.l_user_attraction
+alter table l_user_attraction
     owner to postgres;
 
-create table public.security_credentials
+create table security_credentials
 (
     id             bigint not null
         primary key,
@@ -97,13 +158,12 @@ create table public.security_credentials
                    ((ARRAY ['USER'::character varying, 'MODERATOR'::character varying, 'ADMIN'::character varying])::text[])),
     users_id       bigint
         constraint security_credentials_users_id_fk
-            references public.users
+            references users
             on update cascade on delete cascade,
     users_login    varchar(255),
     users_password varchar(255)
 );
 
-alter table public.security_credentials
+alter table security_credentials
     owner to postgres;
-
 
