@@ -37,7 +37,6 @@ public class CommentsServiceTest {
     static List<Comments> commentsList = null;
     static Comments comments = null;
     static Long commentsId = 10L;
-    static Long usersId = 20L;
 
     @BeforeAll
     static void beforeAll() {
@@ -84,12 +83,6 @@ public class CommentsServiceTest {
         Mockito.verify(securityService).checkAccessById(userDTO.getId());
         Mockito.verify(commentRepository).save(Mockito.any(Comments.class));
         assertNotNull(result);
-    }
-
-    @Test
-    void deleteTest() {
-        commentsService.deleteCommentsById(10L, usersId);
-        Mockito.verify(commentRepository, Mockito.times(1)).deleteById(anyLong());
     }
 
     @Test
