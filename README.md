@@ -7,6 +7,7 @@ This is a TraveProject that provides the ability to add countries, cities, attra
 - Spring Boot
 - PostgreSQL
 - REST API
+- Hibernate
 
 ## Launch of the project
 
