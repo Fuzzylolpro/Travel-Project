@@ -1,13 +1,15 @@
-#Travel-Project
+## TravelProject
 
-This is a TraveProject that provides the ability to add countries, cities, attractions and comments to them, as well as register and leave comments on attractions.
+This is a TraveProject  REST API that provides the ability to add countries, cities, attractions and comments to them, as well as register and leave comments on attractions.
 
 ## Technologies
-
-- Spring Boot
+- java 17 version
+- Spring ( Spring boot, Spring Data, Spring Security);
 - PostgreSQL
-- REST API
+- JUnit 5
 - Hibernate
+- Swagger
+- Maven
 
 ## Launch of the project
 
