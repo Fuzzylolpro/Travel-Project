@@ -1,68 +1,67 @@
-# Travel-Project
+#Travel-Project
 
-Это проект TraveProject который предоставляет возможность добавлять страны,города, достопримечательности и комментарии к ним, а также регистрироваться и оставлять комментарии к достопримечательностям.
+This is a TraveProject that provides the ability to add countries, cities, attractions and comments to them, as well as register and leave comments on attractions.
 
-## Технологии
+## Technologies
 
 - Spring Boot
 - PostgreSQL
 - REST API
 
-## Запуск проекта
+## Launch of the project
 
-1. Установите Java Development Kit (JDK) на вашу систему.
-2. Установите и настройте PostgreSQL на вашу систему.
-3. Клонируйте данный репозиторий на вашу локальную машину.
-4. Откройте проект в вашей любимой интегрированной среде разработки (IDE).
-5. Настройте настройки подключения к базе данных PostgreSQL в файле application.properties.
-6. Запустите приложение, нажав на кнопку "Run".
+1. Install Java Development Kit (JDK) on your system.
+2. Install and configure PostgreSQL on your system.
+3. Clone this repository to your local machine.
+4. Open the project in your favorite integrated development environment (IDE).
+5. Configure the PostgreSQL database connection settings in the application.properties file.
+6. Run the application by clicking on the "Run" button.
 
-## Работа с API
+## Working with the API
 
-### Регистрация
+### Registration
 
-Для регистрации отправьте POST-запрос на /seciruty/registration с JSON-телом, содержащим следующие поля:
+To register, send a POST request to /seciruty/registration with a JSON body containing the following fields:
 
 
-Пример запроса:
+Example request:
 
-POST /seciruty/registration 
+POST /seciruty/registration
 
 {
-    "firstName":"Alex",
-    "secondName":"Brabos",
-    "age":"28",
-    "usersLogin":"USER",
-    "usersPassword":"USER"
+     "firstName":"Alex",
+     "secondName":"Brabos",
+     "age":"28",
+     "usersLogin":"USER",
+     "usersPassword":"USER"
 }
 
 
-### Аутентификация
+### Authentication
 
-Для аутентификации отправьте POST-запрос на /security с JSON-телом, содержащим следующие поля:
+To authenticate, send a POST request to /security with a JSON body containing the following fields:
 
-- username (обязательное поле): имя пользователя
-- password (обязательное поле): пароль пользователя
+- username (required field): username
+- password (required field): user password
 
-Пример запроса:
+Example request:
 
-POST /security 
+POST /security
 
 {
-  "login": "USER",
-  "password": "USER"
+   "login": "USER",
+   "password": "USER"
 }
 
 
-В ответ вы получите токен аутентификации, который нужно использовать для доступа к другим эндпоинтам.
+In response, you will receive an authentication token, which must be used to access other endpoints.
 
-В проект добавлен Swagger, для более быстрого доступа к эндпоинтам и проверки всех методотов.
-Он будет закоментирован в классе SpringSecurityConfiguration
+Swagger has been added to the project for faster access to endpoints and verification of all methods.
+It will be commented out in the SpringSecurityConfiguration class
 ![image](https://github.com/Fuzzylolpro/Travel-Project/assets/132467383/bfd5933f-f111-4616-90f8-b3fd3baa2c00)
-Что бы им воспользоваться, разкоментируйте его и перезапустите приложение
-http://localhost:8080/swagger-ui/index.html#/ по этому адресу увидите все эндпоинты приложения и можете воспользоваться ими.
+To use it, uncomment it and restart the application
+http://localhost:8080/swagger-ui/index.html#/ at this address you will see all the endpoints of the application and you can use them.
 ![image](https://github.com/Fuzzylolpro/Travel-Project/assets/132467383/dbad818c-7fa3-4147-aafe-6d3cdc71782a)
-
 
 
 
