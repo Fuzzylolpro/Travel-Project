@@ -10,6 +10,7 @@ import java.util.Optional;
 @Repository
 public interface SecurityCredentialsRepository extends JpaRepository<SecurityCredentials, Long> {
     Optional<SecurityCredentials> getByUsersLogin(String login);
+
     @Query(
             nativeQuery = true,
             value = "SELECT users_id FROM security_credentials WHERE users_login = ?1")

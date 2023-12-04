@@ -19,17 +19,19 @@ import java.util.Optional;
 @RequiredArgsConstructor
 public class SecurityController {
     private final SecurityService securityService;
+
     @PostMapping("/registration")
-    public ResponseEntity<HttpStatus> registration(@RequestBody RegistrationDTO registrationDTO){
+    public ResponseEntity<HttpStatus> registration(@RequestBody RegistrationDTO registrationDTO) {
         securityService.registration(registrationDTO);
         return new ResponseEntity<>(HttpStatus.CREATED);
     }
+
     @PostMapping
-    public ResponseEntity<AuthResponse> generateToken(@RequestBody AuthRequest authRequest){
-       Optional<String> token = securityService.generateToken(authRequest);
-       if (token.isPresent()){
-           return new ResponseEntity<>(new AuthResponse(token.get()),HttpStatus.CREATED);
-       }
-       return new ResponseEntity<>(HttpStatus.UNAUTHORIZED);
+    public ResponseEntity<AuthResponse> generateToken(@RequestBody AuthRequest authRequest) {
+        Optional<String> token = securityService.generateToken(authRequest);
+        if (token.isPresent()) {
+            return new ResponseEntity<>(new AuthResponse(token.get()), HttpStatus.CREATED);
+        }
+        return new ResponseEntity<>(HttpStatus.UNAUTHORIZED);
     }
 }

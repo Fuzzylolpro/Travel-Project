@@ -42,14 +42,14 @@ public class SpringSecurityConfiguration {
                 .csrf(AbstractHttpConfigurer::disable)
                 .authorizeHttpRequests(auth ->
                         auth
-                                .requestMatchers(new AntPathRequestMatcher("/users/{id}", "GET")).hasAnyRole("USER","ADMIN")
+                                .requestMatchers(new AntPathRequestMatcher("/users/{id}", "GET")).hasAnyRole("USER", "ADMIN")
                                 .requestMatchers(new AntPathRequestMatcher("/users", "GET")).hasRole("ADMIN")
-                                .requestMatchers(new AntPathRequestMatcher("/users", "PUT")).hasAnyRole("USER","ADMIN")
+                                .requestMatchers(new AntPathRequestMatcher("/users", "PUT")).hasAnyRole("USER", "ADMIN")
                                 .requestMatchers(new AntPathRequestMatcher("/users", "POST")).hasRole("ADMIN")
-                                .requestMatchers(new AntPathRequestMatcher("/users/{id}", "DELETE")).hasAnyRole("USER","ADMIN")
-                                .requestMatchers(new AntPathRequestMatcher("/users/{userId}/favoriteAttractions", "GET")).hasAnyRole("USER","ADMIN")
-                                .requestMatchers(new AntPathRequestMatcher("/users/deleteFavoriteAttractions", "DELETE")).hasAnyRole("USER","ADMIN")
-                                .requestMatchers(new AntPathRequestMatcher("/users/addFavoriteAttractions", "POST")).hasAnyRole("USER","ADMIN")
+                                .requestMatchers(new AntPathRequestMatcher("/users/{id}", "DELETE")).hasAnyRole("USER", "ADMIN")
+                                .requestMatchers(new AntPathRequestMatcher("/users/{userId}/favoriteAttractions", "GET")).hasAnyRole("USER", "ADMIN")
+                                .requestMatchers(new AntPathRequestMatcher("/users/deleteFavoriteAttractions", "DELETE")).hasAnyRole("USER", "ADMIN")
+                                .requestMatchers(new AntPathRequestMatcher("/users/addFavoriteAttractions", "POST")).hasAnyRole("USER", "ADMIN")
 
                                 .requestMatchers(new AntPathRequestMatcher("/security/registration", "POST")).permitAll()
                                 .requestMatchers(new AntPathRequestMatcher("/security", "POST")).permitAll()
@@ -69,8 +69,8 @@ public class SpringSecurityConfiguration {
                                 .requestMatchers(new AntPathRequestMatcher("/comments", "GET")).hasRole("ADMIN")
                                 .requestMatchers(new AntPathRequestMatcher("/comments/users/{id}", "GET")).hasRole("ADMIN")
                                 .requestMatchers(new AntPathRequestMatcher("/comments/{id}", "GET")).hasRole("ADMIN")
-                                .requestMatchers(new AntPathRequestMatcher("/comments", "POST")).hasAnyRole("USER","ADMIN")
-                                .requestMatchers(new AntPathRequestMatcher("/comments/{id}", "DELETE")).hasAnyRole("USER","ADMIN")
+                                .requestMatchers(new AntPathRequestMatcher("/comments", "POST")).hasAnyRole("USER", "ADMIN")
+                                .requestMatchers(new AntPathRequestMatcher("/comments/{id}", "DELETE")).hasAnyRole("USER", "ADMIN")
                                 .requestMatchers(new AntPathRequestMatcher("/comments", "PUT")).hasRole("ADMIN")
 
                                 .requestMatchers(new AntPathRequestMatcher("/country", "GET")).permitAll()

@@ -41,7 +41,7 @@ public class Users {
     @Max(value = 120)
     @Column(name = "age")
     private Integer age;
-    @Column(name = "is_married",columnDefinition = "false")
+    @Column(name = "is_married", columnDefinition = "false")
     private Boolean isMarried;
     @Temporal(TemporalType.TIMESTAMP)
     @Column(name = "created")

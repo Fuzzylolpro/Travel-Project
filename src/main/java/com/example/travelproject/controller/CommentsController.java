@@ -46,8 +46,9 @@ public class CommentsController {
         }
         return new ResponseEntity<>(HttpStatus.CONFLICT);
     }
+
     @GetMapping("/users/{id}")
-    public ResponseEntity<List<Comments>> getAllById(@PathVariable("id")Long id) {
+    public ResponseEntity<List<Comments>> getAllById(@PathVariable("id") Long id) {
         List<Comments> commentsList = commentsService.getCommentsByUserId(id);
         return new ResponseEntity<>(commentsList, HttpStatus.OK);
     }

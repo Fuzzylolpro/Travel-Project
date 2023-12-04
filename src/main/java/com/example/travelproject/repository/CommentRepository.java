@@ -8,8 +8,6 @@ import java.util.List;
 
 
 @Repository
-public interface CommentRepository extends JpaRepository<Comments,Long> {
-    List<Comments> findAllByUsers_Id (Long userId);
-
-
+public interface CommentRepository extends JpaRepository<Comments, Long> {
+    List<Comments> findAllByUsers_Id(Long userId);
 }

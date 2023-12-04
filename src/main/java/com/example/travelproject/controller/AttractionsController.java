@@ -53,8 +53,9 @@ public class AttractionsController {
         attractionsService.deleteAttractionsById(id);
         return new ResponseEntity<>(HttpStatus.NO_CONTENT);
     }
+
     @PutMapping
-    public ResponseEntity<HttpStatus> update(@RequestBody Attractions attractions){
-        return new ResponseEntity<>(attractionsService.updateAttractions(attractions)?HttpStatus.NO_CONTENT:HttpStatus.CONFLICT);
+    public ResponseEntity<HttpStatus> update(@RequestBody Attractions attractions) {
+        return new ResponseEntity<>(attractionsService.updateAttractions(attractions) ? HttpStatus.NO_CONTENT : HttpStatus.CONFLICT);
     }
 }
