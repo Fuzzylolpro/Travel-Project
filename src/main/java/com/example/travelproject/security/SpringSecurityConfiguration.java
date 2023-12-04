@@ -28,12 +28,12 @@ public class SpringSecurityConfiguration {
 
     private final JwtAuthenticationFilter jwtAuthenticationFilter;
 
-/*    @Bean
+    @Bean
     public WebSecurityCustomizer webSecurityCustomizer() {
         return (web) -> web.ignoring()
                 .requestMatchers(new AntPathRequestMatcher("/v3/api-docs/**"))
                 .requestMatchers(new AntPathRequestMatcher("/swagger-ui/**"));
-    }*/
+    }
 
 
     @Bean

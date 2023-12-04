@@ -25,7 +25,6 @@ import java.util.Optional;
 import java.util.Set;
 
 @RestController
-@Slf4j
 @SecurityRequirement(name = "Bearer Authentication")
 @RequestMapping("/users")
 public class UsersController {

@@ -20,7 +20,6 @@ import java.util.Optional;
 
 @RestController
 @SecurityRequirement(name = "Bearer Authentication")
-@Slf4j
 @RequestMapping("/city")
 public class CityController {
     private final CityService cityService;

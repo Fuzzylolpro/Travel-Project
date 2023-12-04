@@ -23,7 +23,6 @@ import java.util.List;
 import java.util.Optional;
 
 @RestController
-@Slf4j
 @SecurityRequirement(name = "Bearer Authentication")
 @RequestMapping("/comments")
 public class CommentsController {
