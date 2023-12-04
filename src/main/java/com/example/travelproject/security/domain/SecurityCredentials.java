@@ -28,7 +28,7 @@ public class SecurityCredentials {
     private String usersPassword;
 
     @Column(name = "users_role")
-    @Enumerated(EnumType.STRING) // из строки в enum
+    @Enumerated(EnumType.STRING)
     private Role role;
     @Column(name = "users_id")
     private Long usersId;

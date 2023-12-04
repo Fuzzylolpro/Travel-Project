@@ -3,7 +3,6 @@ package com.example.travelproject.controller;
 import com.example.travelproject.domain.City;
 import com.example.travelproject.service.CityService;
 import io.swagger.v3.oas.annotations.security.SecurityRequirement;
-import lombok.extern.slf4j.Slf4j;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.DeleteMapping;
@@ -44,7 +43,7 @@ public class CityController {
         return new ResponseEntity<>(HttpStatus.CONFLICT);
     }
 
-    @PostMapping // создает
+    @PostMapping
     public ResponseEntity<HttpStatus> create(@RequestBody City city) {
         return new ResponseEntity<>(cityService.createCity(city) ? HttpStatus.CREATED : HttpStatus.CONFLICT);
     }

@@ -6,7 +6,6 @@ import com.example.travelproject.domain.DTO.UserDTO;
 import com.example.travelproject.domain.Users;
 import com.example.travelproject.service.CommentsService;
 import io.swagger.v3.oas.annotations.security.SecurityRequirement;
-import lombok.extern.slf4j.Slf4j;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.DeleteMapping;
@@ -53,7 +52,6 @@ public class CommentsController {
         return new ResponseEntity<>(commentsList, HttpStatus.OK);
     }
 
-    //try DTO
     @PostMapping()
     public ResponseEntity<Comments> createComment(@RequestParam("text") String text,
                                                   @RequestBody UserDTO userDTO,

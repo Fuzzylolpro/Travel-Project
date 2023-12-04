@@ -10,7 +10,7 @@ import org.springframework.web.bind.annotation.ExceptionHandler;
 @ControllerAdvice
 public class ExceptionResolver {
     @ExceptionHandler(RuntimeException.class)
-    public ResponseEntity exceptionHandlerMethod(Exception e) {
+    public ResponseEntity<HttpStatus> exceptionHandlerMethod(Exception e) {
         log.warn(String.valueOf(e));
         return new ResponseEntity<>(HttpStatus.CONFLICT);
     }

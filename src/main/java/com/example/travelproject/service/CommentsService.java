@@ -24,7 +24,6 @@ public class CommentsService {
         this.securityService = securityService;
     }
 
-
     public List<Comments> getAll() {
         return commentRepository.findAll();
     }
@@ -33,7 +32,6 @@ public class CommentsService {
         return commentRepository.findById(id);
     }
 
-    //try DTO
     public Comments addComments(String text, Users userDTO, Attractions attractions) {
         if (securityService.checkAccessById(userDTO.getId())) {
             Comments comments = new Comments();
@@ -68,7 +66,7 @@ public class CommentsService {
             commentRepository.saveAndFlush(comments);
             log.info(String.format("comments update id: " + comments.getId()));
         } catch (Exception e) {
-            log.warn(String.format("error", comments.getId(), e));
+            log.warn(String.format("error" + comments.getId(), e));
             return false;
         }
         return true;
