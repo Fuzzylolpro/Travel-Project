@@ -59,6 +59,7 @@ POST /security
 
 In response, you will receive an authentication token, which must be used to access other endpoints.
 
+### All Endpoint
 Swagger has been added to the project for faster access to endpoints and verification of all methods.
 It will be commented out in the SpringSecurityConfiguration class
 ![image](https://github.com/Fuzzylolpro/Travel-Project/assets/132467383/bfd5933f-f111-4616-90f8-b3fd3baa2c00)
