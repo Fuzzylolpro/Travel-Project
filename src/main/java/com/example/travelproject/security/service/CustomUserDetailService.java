@@ -19,9 +19,6 @@ public class CustomUserDetailService implements UserDetailsService {
 
     @Override
     public UserDetails loadUserByUsername(String username) throws UsernameNotFoundException {
-        //логин -> логин пароль роль
-        //проверка
-        // создаем userdetail
         Optional<SecurityCredentials> userFromDatabase = credentialsRepository.getByUsersLogin(username);
         if (userFromDatabase.isEmpty()) {
             throw new UserFromDatabaseNotFound();
@@ -32,6 +29,5 @@ public class CustomUserDetailService implements UserDetailsService {
                 .password(user.getUsersPassword())
                 .roles(user.getRole().toString())
                 .build();
-
     }
 }

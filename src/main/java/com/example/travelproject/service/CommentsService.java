@@ -9,7 +9,6 @@ import com.example.travelproject.security.service.SecurityService;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.stereotype.Service;
 
-import java.util.Collections;
 import java.util.List;
 import java.util.Objects;
 import java.util.Optional;
@@ -54,11 +53,11 @@ public class CommentsService {
                 commentRepository.deleteById(id);
                 log.info(String.format("comments delete id: " + id + " User id: " + userId));
             } else {
-                log.warn(String.format("Пользователь с id " + userId + " не имеет доступа для удаления комментария с id " + id));
+                log.warn(String.format("User id " + userId + " does not have access to delete a comment with an id " + id));
                 return false;
             }
         } catch (Exception e) {
-            log.warn(String.format("Ошибка при удалении комментария с id " + id, e.getMessage()));
+            log.warn(String.format("Error when deleting a comment from the id " + id, e.getMessage()));
             return false;
         }
         return true;

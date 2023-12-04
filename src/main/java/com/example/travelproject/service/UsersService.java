@@ -86,14 +86,14 @@ public class UsersService {
                 log.info(String.format("users " + userId + " add favorite attractions " + attractionsId));
             } else {
                 if (userOptional.isEmpty()) {
-                    log.warn(String.format("Пользователь с id " + userId + " не найден"));
+                    log.warn(String.format("User  id " + userId + " not found"));
                     return false;
                 }
                 if (attractionsOptional.isEmpty()) {
-                    log.warn(String.format("Достопримечательность с id " + attractionsId + " не найдена"));
+                    log.warn(String.format("Attraction  id " + attractionsId + " not found"));
                     return false;
                 }
-                log.warn(String.format("Ошибка при добавлении достопримечательности в избранное для пользователя " + userId));
+                log.warn(String.format("An error occurred when adding a attraction to the user's favorites " + userId));
                 return false;
             }
         } catch (Exception e) {

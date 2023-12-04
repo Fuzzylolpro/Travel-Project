@@ -28,10 +28,7 @@ public class JwtAuthenticationFilter extends OncePerRequestFilter {
 
     @Override
     protected void doFilterInternal(HttpServletRequest request, HttpServletResponse response, FilterChain filterChain) throws ServletException, IOException {
-        //из req достать jwt tokemn
         Optional<String> token = jwtUtils.getTokenFromHttpRequest(request);
-        //если он !=null и валидный то достаем логин -> пароль роль,
-        // создаем юзер детэил и кладем в security context
         if (token.isPresent() && jwtUtils.validateToken(token.get())) {
             Optional<String> login = jwtUtils.getLoginFromJwt(token.get());
             if (login.isPresent()) {
